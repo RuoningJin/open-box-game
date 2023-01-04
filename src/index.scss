@@ -1,0 +1,9 @@
+@import "styles/variables.scss";
+
+body {
+  height: 100vh;
+  margin: 0;
+  background-image: url("../public/start-background-img.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
