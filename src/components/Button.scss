@@ -1,8 +1,11 @@
 @import "../styles/variables.scss";
 
 .confirm {
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+
   font-family: $font-family;
-  font-size: 50px;
+  font-size: 100%;
   background:none;
   border:none;
   margin:0;
@@ -10,7 +13,11 @@
   cursor: pointer;
 
   &:hover {
-    text-shadow: 2px 5px grey;
+    text-shadow: 4px 7px grey;
+  }
+
+  &:active {
+    text-shadow: 4px 7px orange;
   }
 
   .red {color: $red;}

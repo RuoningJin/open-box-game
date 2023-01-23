@@ -1,7 +1,7 @@
 import React from 'react';
 import './Button.scss';
 
-export const Button = () => {
+export default function Button () {
   return (
     <button type="button" className={'confirm'}>
       <span class="red">S</span>
