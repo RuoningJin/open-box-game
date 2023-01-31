@@ -4,7 +4,7 @@ import './Application.scss';
 
 export default function Application () {
   return (
-    <main>
+    <main className='home-background'>
       <section>
         <Button />
       </section>
