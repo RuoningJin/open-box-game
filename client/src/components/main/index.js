@@ -1,22 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import './index.scss';
 import Box from "./Box";
 
 export default function Trials() {
+  const ref = useRef(null);
 
-  const elem = document.getElementById("fullScreen");
+  // componentDidMount() {
+  //   if (ref.current.requestFullscreen) {
+  //     ref.current.requestFullscreen();
+  //   }
+  // }
 
   useEffect(() => {
-
-  }, [])
-  const openFullScreen = () => {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
+    if (ref.current.requestFullscreen) {
+      ref.current.requestFullscreen();
     }
-  }
+  }, [])
 
   return (
-    <main id='fullScreen' className='main-layout' onClick={openFullScreen}>
+    <main ref={ref} className='main-layout'>
       <div className='box-container'>
         <Box />
       </div>
