@@ -1,23 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './Box.scss';
-import closeRedSquareBox from '../../img/close_box_red_square.png';
-import openRedSquareBox from '../../img/open_box_red_square.png';
-import closeBlueTriangleBox from '../../img/close_box_blue_triangle.png';
-import openBlueTriangleBox from '../../img/open_box_blue_triangle.png';
 
 export default function Box() {
-  const [box, setBox] = useState(closeRedSquareBox);
+  const [boxStatus, setBoxStatus] = useState('close');
+  const [boxColor, setBoxColor] = useState('red');
+  const [boxShape, setBoxShape] = useState('square');
+
+
+  const [box, setBox] = useState(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
+
+  useEffect(() => {
+
+    setBox(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
+
+  }, [boxStatus, boxColor, boxShape])
+
   const clickHandler = () => {
-    setBox(openRedSquareBox)
+    setBoxStatus('open')
+
     setTimeout(() => {
-      setBox(closeBlueTriangleBox)
+      setBoxStatus('close');
+      setBoxColor('blue');
+      setBoxShape('triangle');
     }, 1500);
   }
 
   return (
     <section>
-      <img className='box' src={box} alt='open box' onClick={clickHandler}/>
+      <img className='box' src={box} alt='box' onClick={clickHandler}/>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import './index.scss';
 import '../Button.scss';
 
@@ -26,10 +26,11 @@ export default function Trials() {
         <span className="yellow">a</span>
         <span className="green">y!</span>
       </button>}
+
       {fullScreen === true &&
         <div className='box-container'>
-        <Box />
-      </div>
+          <Box />
+        </div>
       }
     </main>
   )
