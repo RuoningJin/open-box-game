@@ -7,14 +7,11 @@ export default function Box() {
   const [boxColor, setBoxColor] = useState('red');
   const [boxShape, setBoxShape] = useState('square');
 
-
   const [box, setBox] = useState(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
 
   useEffect(() => {
-
     setBox(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
-
-  }, [boxStatus, boxColor, boxShape])
+  }, [boxStatus, boxColor, boxShape]);
 
   const clickHandler = () => {
     setBoxStatus('open')
