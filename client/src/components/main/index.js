@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import './index.scss';
 import '../Button.scss';
+import axios from 'axios';
 
 import Box from "./Box";
 
@@ -12,6 +13,14 @@ export default function Trials() {
     ref.current.requestFullscreen();
     setFullScreen(true);
   }
+
+  axios({
+    method: 'get',
+    url: 'http://localhost:8080/api/',
+  })
+    .then((res) => {
+      console.log(res.data);
+    });
 
   return (
     <main ref={ref} className='main-layout'>

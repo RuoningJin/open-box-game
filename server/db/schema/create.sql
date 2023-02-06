@@ -20,10 +20,8 @@ CREATE TABLE valences (
 
 CREATE TABLE trials (
   id SERIAL PRIMARY KEY NOT NULL,
-  left_shape_id INTEGER REFERENCES shapes(id) ON DELETE CASCADE,
-  left_color_id INTEGER REFERENCES colors(id) ON DELETE CASCADE,
-  left_valence_id INTEGER REFERENCES valences(id) ON DELETE CASCADE,
-  right_shape_id INTEGER REFERENCES shapes(id) ON DELETE CASCADE,
-  right_color_id INTEGER REFERENCES colors(id) ON DELETE CASCADE,
-  right_valence_id INTEGER REFERENCES valences(id) ON DELETE CASCADE
+  shape_id INTEGER REFERENCES shapes(id) ON DELETE CASCADE,
+  color_id INTEGER REFERENCES colors(id) ON DELETE CASCADE,
+  valence_id INTEGER REFERENCES valences(id) ON DELETE CASCADE,
+  rewards INTEGER
 );
