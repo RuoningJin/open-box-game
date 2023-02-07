@@ -8,19 +8,19 @@ const trials = {
     shape: 'square',
     color: 'red',
     valence: 'positive',
-    rewards: 3
+    rewards: true
   },
   2: {
     shape: 'triangle',
     color: 'blue',
     valence: 'negative',
-    rewards: 2
+    rewards: false
   },
   3: {
     shape: 'circle',
     color: 'green',
-    valence: 'positive',
-    rewards: 0
+    valence: 'neutral',
+    rewards: true
   },
 }
 
