@@ -31,6 +31,13 @@ export default function Box(props) {
 
   return (
     <section className='trial-select'>
+      {boxStatus === 'open' && 
+        <div className='rewards'>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+        </div>
+      }
       <img className='box' src={box} alt='box' onClick={clickHandler}/>
       <button className='skip-button' onClick={skipHandler}>Skip</button>
     </section>

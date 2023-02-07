@@ -12,8 +12,22 @@
   }
 }
 
+.rewards {
+  position: absolute;
+  z-index: 999;
+  transform: translateY(-100px);
+
+  &-item {
+    width: 1.5em;
+    margin-right: -50px;
+    margin-left: -50px;
+  }
+
+}
+
 .skip-button {
-  margin-top: 40px;
+  position: absolute;
+  bottom: 5vh;
   font-size: 100px;
   color: red;
   background-color: white;
