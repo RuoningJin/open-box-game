@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import './Box.scss';
 
-export default function Box() {
+export default function Box(props) {
   const [boxStatus, setBoxStatus] = useState('close');
   const [boxColor, setBoxColor] = useState('red');
   const [boxShape, setBoxShape] = useState('square');
@@ -23,9 +23,16 @@ export default function Box() {
     }, 1500);
   }
 
+  const skipHandler = () => {
+    setBoxStatus('close');
+    setBoxColor('blue');
+    setBoxShape('triangle');
+  }
+
   return (
-    <section>
+    <section className='trial-select'>
       <img className='box' src={box} alt='box' onClick={clickHandler}/>
+      <button className='skip-button' onClick={skipHandler}>Skip</button>
     </section>
   )
 }

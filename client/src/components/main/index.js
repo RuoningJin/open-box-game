@@ -8,6 +8,7 @@ import Box from "./Box";
 export default function Trials() {
   const ref = useRef(null);
   const [fullScreen, setFullScreen] = useState(false);
+  
 
   const openFullScreen = () => {
     ref.current.requestFullscreen();

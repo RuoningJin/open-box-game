@@ -15,12 +15,15 @@
 }
 
 .box-container {
-  padding-top: 40vh;
+  padding-top: 30vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .play-button {
   @include confirm-button;
   font-size: 7vw;
 }
+
