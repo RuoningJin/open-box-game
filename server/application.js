@@ -22,6 +22,48 @@ const trials = {
     valence: 'neutral',
     rewards: true
   },
+  4: {
+    shape: 'circle',
+    color: 'blue',
+    valence: 'neutral',
+    rewards: true
+  },
+  5: {
+    shape: 'circle',
+    color: 'red',
+    valence: 'negative',
+    rewards: false
+  },
+  6: {
+    shape: 'triangle',
+    color: 'green',
+    valence: 'neutral',
+    rewards: true
+  },
+  7: {
+    shape: 'diamond',
+    color: 'blue',
+    valence: 'positive',
+    rewards: false
+  },
+  8: {
+    shape: 'square',
+    color: 'green',
+    valence: 'neutral',
+    rewards: false
+  },
+  9: {
+    shape: 'diamond',
+    color: 'blue',
+    valence: 'negative',
+    rewards: true
+  },
+  10: {
+    shape: 'circle',
+    color: 'green',
+    valence: 'neutral',
+    rewards: false
+  },
 }
 
 app.use(cors({ origin: 'http://localhost:3000'}));

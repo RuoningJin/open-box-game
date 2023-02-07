@@ -6,6 +6,7 @@ export default function Box(props) {
   const [boxStatus, setBoxStatus] = useState('close');
   const [boxColor, setBoxColor] = useState('red');
   const [boxShape, setBoxShape] = useState('square');
+  const [reward, setReward] = useState(false);
 
   const [box, setBox] = useState(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
 
@@ -31,7 +32,7 @@ export default function Box(props) {
 
   return (
     <section className='trial-select'>
-      {boxStatus === 'open' && 
+      {boxStatus === 'open' && reward === true &&
         <div className='rewards'>
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>
