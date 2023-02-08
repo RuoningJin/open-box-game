@@ -1,13 +1,15 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import './index.scss';
 import '../Button.scss';
 import axios from 'axios';
 
 import Box from "./Box";
 
-export default function Trials() {
+export default function Trials(props) {
   const ref = useRef(null);
   const [fullScreen, setFullScreen] = useState(false);
+  const [trialId, setTrialId] = useState(1);
+  const [trial, setTrial] = useState({});
   
 
   const openFullScreen = () => {
@@ -15,13 +17,20 @@ export default function Trials() {
     setFullScreen(true);
   }
 
-  axios({
-    method: 'get',
-    url: 'http://localhost:8080/api/',
-  })
-    .then((res) => {
-      console.log(res.data);
-    });
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'http://localhost:8080/api/',
+    })
+      .then((res) => {
+        if (res.data[trialId]) {
+          setTrial(res.data[trialId]);
+        }
+        if (res.data[trialId] === undefined) {
+          setTrial('end');
+        }
+      });
+  }, [trialId])
 
   return (
     <main ref={ref} className='main-layout'>
@@ -39,7 +48,7 @@ export default function Trials() {
 
       {fullScreen === true &&
         <div className='box-container'>
-          <Box />
+          <Box trial={trial} trialId={trialId} setTrialId={setTrialId}/>
         </div>
       }
     </main>
