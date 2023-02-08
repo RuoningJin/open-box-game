@@ -6,7 +6,7 @@ import './Application.scss';
 
 export default function Application () {
   const navigate = useNavigate();
-  const handleStartClick = () => navigate('/main');
+  const handleStartClick = () => navigate('/consent');
 
   return (
     <main className='home-background'>

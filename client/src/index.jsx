@@ -9,6 +9,7 @@ import {
 
 import Application from './components/Application';
 import Trials from './components/main';
+import Consent from './components/Consent';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/main",
     element: <Trials />
+  },
+  {
+    path: "/consent",
+    element: <Consent />
   },
 ]);
 
