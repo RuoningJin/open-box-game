@@ -6,7 +6,7 @@ export default function Consent () {
   // const handleStartClick = () => navigate('/main');
 
   return (
-    <main className='home-background'>
+    <main className='consent-background'>
 
     </main>
 

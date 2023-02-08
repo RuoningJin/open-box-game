@@ -1,0 +1,23 @@
+@import "../styles/variables.scss";
+
+.consent-background {
+  position: fixed;
+  bottom: 0px;
+  height: 20vh;
+  width: 100%;
+  background-image: url("../../public/consent-background-img.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: slide 60s linear infinite;
+  animation: animatedBackground 500s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+/*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}
