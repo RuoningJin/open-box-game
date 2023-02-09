@@ -3,4 +3,13 @@
 
 .confirm {
   @include confirm-button;
+  margin-top: 10vh;
+
+  &:hover {
+    text-shadow: 4px 7px grey;
+  }
+
+  &:active {
+    text-shadow: 4px 7px orange;
+  }
 }

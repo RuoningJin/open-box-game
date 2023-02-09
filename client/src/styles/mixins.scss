@@ -7,18 +7,9 @@
   background:none;
   border:none;
   margin:0;
-  margin-top: 10vh;
 
   padding:0;
   cursor: pointer;
-
-  &:hover {
-    text-shadow: 4px 7px grey;
-  }
-
-  &:active {
-    text-shadow: 4px 7px orange;
-  }
 
   .red {color: $red;}
   .blue {color: $blue;}

@@ -1,4 +1,5 @@
 @import "../styles/variables.scss";
+@import '../styles//mixins.scss';
 
 .consent-background {
   position: fixed;
@@ -21,3 +22,43 @@
     background-position: -10000px 0;
   }
 }
+
+.consent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%
+  }
+  
+  &-title {
+    @include confirm-button;
+    margin-top: 5vh;
+    font-size: 5vw;
+    top: 0;
+    cursor: default;
+  }
+  
+  &-content {
+    height: 50vh;
+    font-size: 25px;
+    position: inherit;
+    top: 0;
+  }
+  
+  &-confirm {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+  
+    &--button {
+      width: 100%;
+    }
+  }
+
+}
+

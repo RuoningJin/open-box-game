@@ -24,5 +24,13 @@
 .play-button {
   @include confirm-button;
   font-size: 7vw;
+
+  &:hover {
+    text-shadow: 4px 7px grey;
+  }
+
+  &:active {
+    text-shadow: 4px 7px orange;
+  }
 }
 
