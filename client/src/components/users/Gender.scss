@@ -1,0 +1,36 @@
+.gender-selection {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 10px;
+
+}
+
+.gender {
+
+  width: 15vw;
+  filter: grayscale(1);
+
+  &:hover {
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.girl-selected {
+  filter: none;
+
+  &:hover {
+    cursor: default;
+    filter: none;
+  }
+}
+
+.boy-selected {
+  filter: none;
+
+  &:hover {
+    cursor: default;
+    filter: none;
+  }
+}
