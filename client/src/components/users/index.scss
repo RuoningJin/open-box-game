@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+@import '../../styles//mixins.scss';
+
+.users-background {
+  position: fixed;
+  bottom: 0px;
+  height: 10vh;
+  width: 100%;
+  background-image: url("../../../public/users-background-img.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  animation: slide 60s linear infinite;
+  animation: animatedBackground 500s linear infinite;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+/*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -10000px 0;
+  }
+}

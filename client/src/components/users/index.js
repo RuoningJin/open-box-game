@@ -4,6 +4,13 @@ import './index.scss';
 export default function Users(props) {
 
   return (
-    <main></main>
+    <>
+      <section className='users-background'></section>
+      
+      <main>
+
+      </main>
+    </>
+
   )
 }
