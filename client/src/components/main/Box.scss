@@ -16,6 +16,7 @@
   position: absolute;
   z-index: 999;
   transform: translateY(-100px);
+  display: flex;
 
   &-item {
     width: 1.5em;
