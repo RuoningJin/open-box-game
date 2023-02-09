@@ -22,3 +22,45 @@
     background-position: -10000px 0;
   }
 }
+
+.gender-container {
+  display: flex;
+  justify-content: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 10px;
+}
+
+.consent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+  }
+
+}
+
+.gender-title {
+  display: flex;
+  justify-content: center;
+  @include confirm-button;
+  -webkit-text-stroke-width: 1px;
+  font-size: 3vw;
+  top: 0;
+  cursor: default;
+}
+
+.age-title {
+  display: flex;
+  justify-content: center;
+  @include confirm-button;
+  -webkit-text-stroke-width: 1px;
+  font-size: 3vw;
+  cursor: default;
+  margin-bottom: -70px;
+}

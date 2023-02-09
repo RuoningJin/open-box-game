@@ -1,7 +1,6 @@
 import './Consent.scss';
 import { useNavigate } from "react-router-dom";
-import { Box } from '@chakra-ui/react'
-import { Button } from '@chakra-ui/react'
+import { Box, Button } from '@chakra-ui/react'
 
 export default function Consent () {
   const navigate = useNavigate();
