@@ -5,7 +5,7 @@ import { Button } from '@chakra-ui/react'
 
 export default function Consent () {
   const navigate = useNavigate();
-  const handleConsentClick = () => navigate('/main');
+  const handleConsentClick = () => navigate('/users');
 
   return (
     <>
