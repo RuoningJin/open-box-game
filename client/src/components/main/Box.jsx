@@ -45,8 +45,15 @@ export default function Box(props) {
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>
         </div>
       }
-      <img className='box' src={box} alt='box' onClick={clickHandler}/>
-      <button className='skip-button' onClick={skipHandler}>Skip</button>
+      {props.trial !== 'end' &&
+        <img className='box' src={box} alt='box' onClick={clickHandler}/>
+      }
+      {props.trial !== 'end' &&
+        <button className='skip-button' onClick={skipHandler}>Skip</button>
+      }
+      {props.trial === 'end' &&
+        <h1>Thank you for participating!</h1>
+      }
     </section>
   )
 }
