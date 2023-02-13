@@ -18,13 +18,13 @@ export default function Box(props) {
     setBoxStatus('open')
     props.setTrialId(props.trialId + 1);
     if (props.trial.valence === 'positive') {
-      new Audio('./valence-sound/positive.m4a').play();
+      new Audio('./valence-sound/positive.mp3').play();
     }
     if (props.trial.valence === 'negative') {
-      new Audio('./valence-sound/negative.m4a').play();
+      new Audio('./valence-sound/negative.mp3').play();
     }
     if (props.trial.valence === 'neutral') {
-      new Audio('./valence-sound/neutral.m4a').play();
+      new Audio('./valence-sound/neutral.mp3').play();
     }
 
       setTimeout(() => {
