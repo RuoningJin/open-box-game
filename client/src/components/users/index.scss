@@ -53,6 +53,7 @@
   font-size: 3vw;
   top: 0;
   cursor: default;
+
 }
 
 .age-title {
@@ -63,4 +64,16 @@
   font-size: 3vw;
   cursor: default;
   margin-bottom: -70px;
+}
+
+.confirm-users {
+  @include confirm-button;
+
+  &:hover {
+    text-shadow: 4px 7px grey;
+  }
+
+  &:active {
+    text-shadow: 4px 7px orange;
+  }
 }

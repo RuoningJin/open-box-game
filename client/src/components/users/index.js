@@ -39,16 +39,17 @@ export default function Users(props) {
               <Age />
             </Box>
 
-            <button type="button" className={'confirm'} onClick={handleUserClick}>
-              <span className="red">S</span>
-              <span className="blue">t</span>
-              <span className="yellow">a</span>
-              <span className="green">r</span>
-              <span className="red">t</span>
+            <button type="button" className={'confirm-users'} onClick={handleUserClick}>
+              <span className="red">C</span>
+              <span className="blue">o</span>
+              <span className="yellow">n</span>
+              <span className="green">t</span>
+              <span className="green">i</span>
+              <span className="yellow">n</span>
+              <span className="blue">u</span>
+              <span className="red">e</span>
             </button>
           </Stack>
-
-
 
         </section>
 
