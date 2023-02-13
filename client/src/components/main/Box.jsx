@@ -17,13 +17,22 @@ export default function Box(props) {
   const clickHandler = () => {
     setBoxStatus('open')
     props.setTrialId(props.trialId + 1);
+    if (props.trial.valence === 'positive') {
+      new Audio('./valence-sound/positive.m4a').play();
+    }
+    if (props.trial.valence === 'negative') {
+      new Audio('./valence-sound/negative.m4a').play();
+    }
+    if (props.trial.valence === 'neutral') {
+      new Audio('./valence-sound/neutral.m4a').play();
+    }
 
       setTimeout(() => {
         setBoxStatus('close');
         setBoxColor(props.trial.color);
         setBoxShape(props.trial.shape);
         setReward(props.trial.rewards);
-      }, 1500);
+      }, 2500);
   }
 
   const skipHandler = () => {
@@ -38,8 +47,16 @@ export default function Box(props) {
 
   return (
     <section className='trial-select'>
-      {boxStatus === 'open' && reward &&
+      {boxStatus === 'open' && reward === 'positive' &&
         <div className='rewards'>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+          <img className='rewards-item' src={'/candy.png'} alt='reward'/>
+        </div>
+      }
+      {boxStatus === 'open' && reward === 'negative' &&
+        <div className='rewards'>
+          <h1>-&nbsp;</h1>
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>
           <img className='rewards-item' src={'/candy.png'} alt='reward'/>

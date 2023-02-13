@@ -8,61 +8,61 @@ const trials = {
     shape: 'square',
     color: 'red',
     valence: 'positive',
-    rewards: true
+    rewards: 'positive'
   },
   2: {
     shape: 'triangle',
     color: 'blue',
-    valence: 'negative',
-    rewards: false
+    valence: 'neutral',
+    rewards: 'negative'
   },
   3: {
     shape: 'circle',
     color: 'green',
-    valence: 'neutral',
-    rewards: true
+    valence: 'negative',
+    rewards: ''
   },
   4: {
     shape: 'circle',
     color: 'blue',
     valence: 'neutral',
-    rewards: true
+    rewards: 'positive'
   },
   5: {
     shape: 'circle',
     color: 'red',
-    valence: 'negative',
-    rewards: false
+    valence: 'positive',
+    rewards: ''
   },
   6: {
     shape: 'triangle',
     color: 'green',
     valence: 'neutral',
-    rewards: true
+    rewards: 'negative'
   },
   7: {
     shape: 'diamond',
     color: 'blue',
-    valence: 'positive',
-    rewards: false
+    valence: 'negative',
+    rewards: ''
   },
   8: {
     shape: 'square',
     color: 'green',
     valence: 'neutral',
-    rewards: false
+    rewards: ''
   },
   9: {
     shape: 'diamond',
     color: 'blue',
     valence: 'negative',
-    rewards: true
+    rewards: 'negative'
   },
   10: {
     shape: 'circle',
     color: 'green',
-    valence: 'neutral',
-    rewards: false
+    valence: 'negative',
+    rewards: ''
   },
 }
 
