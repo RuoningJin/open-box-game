@@ -7,6 +7,7 @@ export default function Box(props) {
   const [boxColor, setBoxColor] = useState(props.trial.color);
   const [boxShape, setBoxShape] = useState(props.trial.shape);
   const [reward, setReward] = useState(props.trial.rewards);
+  const [disable, setDisable] = useState(false);
 
   const [box, setBox] = useState(`/box-img/${boxStatus}_box_${boxColor}_${boxShape}.png`);
 
@@ -15,7 +16,8 @@ export default function Box(props) {
   }, [boxStatus, boxColor, boxShape]);
 
   const clickHandler = () => {
-    setBoxStatus('open')
+    setBoxStatus('open');
+    setDisable(true);
     props.setTrialId(props.trialId + 1);
     if (props.trial.valence === 'positive') {
       new Audio('./valence-sound/positive.mp3').play();
@@ -27,12 +29,13 @@ export default function Box(props) {
       new Audio('./valence-sound/neutral.mp3').play();
     }
 
-      setTimeout(() => {
-        setBoxStatus('close');
-        setBoxColor(props.trial.color);
-        setBoxShape(props.trial.shape);
-        setReward(props.trial.rewards);
-      }, 2500);
+    setTimeout(() => {
+      setDisable(false);
+      setBoxStatus('close');
+      setBoxColor(props.trial.color);
+      setBoxShape(props.trial.shape);
+      setReward(props.trial.rewards);
+    }, 2500);
   }
 
   const skipHandler = () => {
@@ -63,7 +66,7 @@ export default function Box(props) {
         </div>
       }
       {props.trial !== 'end' &&
-        <img className='box' src={box} alt='box' onClick={clickHandler}/>
+        <img disabled={disable} className='box' src={box} alt='box' onClick={clickHandler}/>
       }
       {props.trial !== 'end' &&
         <button className='skip-button' onClick={skipHandler}>Skip</button>

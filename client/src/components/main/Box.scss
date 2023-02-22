@@ -12,6 +12,10 @@
   }
 }
 
+.box[disabled] {
+  pointer-events: none;
+}
+
 .rewards {
   position: absolute;
   z-index: 999;
