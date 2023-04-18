@@ -70,10 +70,10 @@
   @include confirm-button;
 
   &:hover {
-    text-shadow: 4px 7px grey;
+    text-shadow: 7px 15px grey;
   }
 
   &:active {
-    text-shadow: 4px 7px orange;
+    text-shadow: 7px 15px orange;
   }
 }
