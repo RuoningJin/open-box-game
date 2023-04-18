@@ -4,12 +4,13 @@
 .confirm {
   @include confirm-button;
   margin-top: 10vh;
+  color: rgb(234, 249, 255);
 
   &:hover {
-    text-shadow: 4px 7px grey;
+    text-shadow: 4px 7px orange;
   }
 
   &:active {
-    text-shadow: 4px 7px orange;
+    text-shadow: 4px 7px rgb(255, 139, 23);
   }
 }
