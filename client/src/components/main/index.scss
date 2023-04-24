@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 40vh;
 
   &-text {
     @include confirm-button;
@@ -15,6 +15,6 @@
   }
 
   &-fish {
-
+    width: 10vw;
   }
 }

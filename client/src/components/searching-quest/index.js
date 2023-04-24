@@ -1,10 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.scss';
 import '../Button.scss';
 
 export default function Searching(props) {
+  const [loadingFish, setLoadingFish] = useState();
 
+  useEffect(() => {
+
+    setTimeout(() => {
+      setLoadingFish(`/loading-fish/loading-red.png`);
+    }, 1500);
   
+    setTimeout(() => {
+      setLoadingFish(`/loading-fish/loading-blue.png`);
+    }, 3000);
+  
+    setTimeout(() => {
+      setLoadingFish(`/loading-fish/loading-green.png`);
+    }, 4500);
+  
+    setTimeout(() => {
+      setLoadingFish(`/loading-fish/loading-yellow.png`);
+    }, 6000);
+
+  }, []);
 
   return (
     <main className='searching'>
@@ -32,7 +51,7 @@ export default function Searching(props) {
         <span className="green">s</span>
       </div>
       <div className='searching-fish'>
-        <h1>hello</h1>
+        <img src={loadingFish} alt='loading-fish'/>
       </div>
 
     </main>
