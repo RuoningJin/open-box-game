@@ -27,8 +27,6 @@ export default function Loading(props) {
         <span className="green">t</span>
         <span className="green">s</span>
 
-
-
       </div>
       <div id='cross-fading' className='searching-loading'>
         <img src='/loading-fish/loading-yellow.png'alt='loading-yellow' className='searching-fish'/>

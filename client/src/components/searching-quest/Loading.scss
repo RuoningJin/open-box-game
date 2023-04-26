@@ -31,6 +31,7 @@
   position:absolute;
   right: 2vw;
   bottom: 2vh;
+  opacity: 0;
   -webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
@@ -39,10 +40,10 @@
 
 @keyframes cf3FadeInOut {
   0% {
-    opacity:1;
-  }
-  17% {
     opacity:0;
+  }
+  10% {
+    opacity:1;
   }
   25% {
     opacity:0;
@@ -51,7 +52,7 @@
     opacity:0;
   }
   100% {
-    opacity:1;
+    opacity:0;
   }
 }
 
