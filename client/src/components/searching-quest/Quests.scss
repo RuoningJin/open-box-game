@@ -1,0 +1,12 @@
+.quests {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+
+  &-map {
+    height: 80%;
+    position: fixed;
+    bottom: 5vh;
+    filter: drop-shadow(3px 7px 5px rgba(0, 0, 0, 0.4));
+  }
+}

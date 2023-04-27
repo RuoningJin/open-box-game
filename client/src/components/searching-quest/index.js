@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import Loading from './Loading';
+import Quests from './Quests';
+
+import './index.scss';
 
 export default function Searching(props) {
   const [loading, setLoading] = useState(true);
@@ -9,8 +12,10 @@ export default function Searching(props) {
 
   return (
     <>
-      {loading &&  <Loading />}
+      <main className='background-cloud'>
+        {loading &&  <Loading />}
+        {!loading && <Quests />}
+      </main>
     </>
-   
   )
 }
