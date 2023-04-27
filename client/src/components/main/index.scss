@@ -20,17 +20,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.play-button {
-  @include confirm-button;
-  font-size: 7vw;
-
-  &:hover {
-    text-shadow: 7px 15px grey;
-  }
-
-  &:active {
-    text-shadow: 7px 15px orange;
-  }
-}
-
