@@ -34,7 +34,7 @@ export default function Consent () {
             <Button size='lg' colorScheme='whatsapp' variant='solid' className='consent-confirm--button' onClick={handleConsentClick}>
               I Agree
             </Button>
-            <Button size='lg' width='300px' colorScheme='red' variant='outline' className='consent-confirm--button' onClick={handleConsentClick}>
+            <Button size='lg' width='300px' colorScheme='red' variant='outline' background='white' className='consent-confirm--button' onClick={handleConsentClick}>
               Skip
             </Button>
           </div>
