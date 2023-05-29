@@ -46,15 +46,13 @@
   justify-content: center;
   align-items: center;
   @include confirm-button;
-  -webkit-text-stroke-width: 0.15vw;
+  -webkit-text-stroke-width: 0.20vw;
   font-size: 3vw;
-  top: 0;
   cursor: default;
   background-color: #EBEBEB;
+  width: 10vw;
+  height: 7vh;
   border-radius: 3.75vw;
-  width: 8vw;
-  height: 8vw;
-  border-radius: 50%;
 }
 
 .confirm-users {
