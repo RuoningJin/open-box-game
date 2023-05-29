@@ -2,7 +2,7 @@
 import './index.scss';
 import Gender from './Gender';
 import Age from './Age';
-import { Card, CardBody, Stack, StackDivider, Box} from '@chakra-ui/react'
+import { Card, CardBody, Stack, StackDivider, Box, Flex} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 
 export default function Users(props) {
@@ -16,22 +16,22 @@ export default function Users(props) {
         <section className='gender-container'>
 
           <Stack spacing='4'>
-            <Box>
-              <div className={'gender-title'}>
+            <Flex direction='column' align='center'>
+              <div className={'user-info-title'}>
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
                 <span className="yellow">&nbsp;a</span>
               </div>
               <Gender />
-            </Box>
+            </Flex>
 
-            <Box>
-              <div className={'age-title'}>
+            <Flex direction='column' align='center'>
+              <div className={'user-info-title'} style={{marginBottom: '-8vh'}}>
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
               </div>
               <Age />
-            </Box>
+            </Flex>
 
             <button type="button" className={'confirm-users'} onClick={handleUserClick}>
               <span className="red">C</span>

@@ -41,9 +41,10 @@
 
 }
 
-.gender-title {
+.user-info-title {
   display: flex;
   justify-content: center;
+  align-items: center;
   @include confirm-button;
   -webkit-text-stroke-width: 0.15vw;
   font-size: 3vw;
@@ -51,18 +52,9 @@
   cursor: default;
   background-color: #EBEBEB;
   border-radius: 3.75vw;
-}
-
-.age-title {
-  display: flex;
-  justify-content: center;
-  @include confirm-button;
-  -webkit-text-stroke-width: 0.15vw;
-  font-size: 3vw;
-  cursor: default;
-  margin-bottom: -70px;
-  background-color: #EBEBEB;
-  border-radius: 3.75vw;
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
 }
 
 .confirm-users {
