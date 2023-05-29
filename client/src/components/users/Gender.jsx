@@ -15,8 +15,8 @@ export default function Gender(props) {
 
   return (
     <section className='gender-selection'>
-      <img src={'/girl.svg'} alt='girl' className={girlSelected} onClick={() => setGender('girl')}/>
-      <img src={'/boy.svg'} alt='boy' className={boySelected} onClick={() => setGender('boy')}/>
+      <img src={'/girl.png'} alt='girl' className={girlSelected} onClick={() => setGender('girl')}/>
+      <img src={'/boy.png'} alt='boy' className={boySelected} onClick={() => setGender('boy')}/>
     </section>      
 
   )

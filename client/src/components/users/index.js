@@ -15,26 +15,20 @@ export default function Users(props) {
   
         <section className='gender-container'>
 
-          <Stack divider={<StackDivider />} spacing='4'>
+          <Stack spacing='4'>
             <Box>
               <div className={'gender-title'}>
-                <span className="red">I'</span>
-                <span className="blue">m</span>
+                <span className="red">I</span>
+                <span className="blue">&nbsp;am</span>
                 <span className="yellow">&nbsp;a</span>
-                <span className="green">.</span>
-                <span className="yellow">.</span>
-                <span className="blue">.</span>
               </div>
               <Gender />
             </Box>
 
             <Box>
               <div className={'age-title'}>
-                <span className="red">I'</span>
-                <span className="blue">m</span>
-                <span className="green">.</span>
-                <span className="yellow">.</span>
-                <span className="blue">.</span>
+                <span className="red">I</span>
+                <span className="blue">&nbsp;am</span>
               </div>
               <Age />
             </Box>

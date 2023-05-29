@@ -9,17 +9,19 @@ import {
 } from '@chakra-ui/react'
 
 export default function Age () {
-  const [sliderValue, setSliderValue] = useState(50)
+  const defaultSliderValue = 25;
+  const [sliderValue, setSliderValue] = useState(defaultSliderValue)
 
   const labelStyles = {
-    fontFamily: 'Rubik Vinyl',
+    fontFamily: 'Luckiest Guy',
     mt: '2',
     ml: '-4',
+    color: 'grey',
     fontSize: '25px',
   }
 
   return (
-    <Slider defaultValue={15} min={3} max={50} step={1} onChange={(val) => setSliderValue(val)}>
+    <Slider defaultValue={defaultSliderValue} min={3} max={50} step={1} onChange={(val) => setSliderValue(val)}>
         <SliderMark value={3} {...labelStyles}>
           3
         </SliderMark>
@@ -29,12 +31,13 @@ export default function Age () {
         <SliderMark
           value={sliderValue}
           textAlign='center'
-          color='black'
+          color='grey'
           mt='-65'
           ml='-75'
           w='100'
           fontSize='30'
-          fontFamily='Rubik Vinyl'
+          fontFamily='Luckiest Guy'
+          left='0'
         >
           {sliderValue} Years Old
         </SliderMark>

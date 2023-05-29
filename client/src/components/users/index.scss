@@ -6,11 +6,7 @@
   bottom: 0px;
   height: 10vh;
   width: 100%;
-  background-image: url("../../../public/users-background-img.png");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  animation: slide 60s linear infinite;
-  animation: animatedBackground 500s linear infinite;
+
 }
 
 @keyframes animatedBackground {
@@ -49,21 +45,24 @@
   display: flex;
   justify-content: center;
   @include confirm-button;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.15vw;
   font-size: 3vw;
   top: 0;
   cursor: default;
-
+  background-color: #EBEBEB;
+  border-radius: 3.75vw;
 }
 
 .age-title {
   display: flex;
   justify-content: center;
   @include confirm-button;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 0.15vw;
   font-size: 3vw;
   cursor: default;
   margin-bottom: -70px;
+  background-color: #EBEBEB;
+  border-radius: 3.75vw;
 }
 
 .confirm-users {
