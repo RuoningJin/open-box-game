@@ -2,7 +2,7 @@
 import './index.scss';
 import Gender from './Gender';
 import Age from './Age';
-import { Card, CardBody, Stack, StackDivider, Box, Flex} from '@chakra-ui/react'
+import { Stack, Flex} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 
 export default function Users(props) {
@@ -10,14 +10,13 @@ export default function Users(props) {
   const handleUserClick = () => navigate('/main');
 
   return (
-    <>
-        <section className='users-background'></section>
-  
+    <main className='layout'>
+        
         <section className='gender-container'>
 
           <Stack spacing='4'>
             <Flex direction='column' align='center'>
-              <div className={'user-info-title'}>
+              <div className={'user-info-title'} style={{marginTop: '4vh'}}>
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
                 <span className="yellow">&nbsp;a</span>
@@ -44,10 +43,7 @@ export default function Users(props) {
               <span className="red">e</span>
             </button>
           </Stack>
-
         </section>
-
-    </>
-
+    </main>
   )
 }
