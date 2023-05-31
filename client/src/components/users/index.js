@@ -11,12 +11,13 @@ export default function Users(props) {
 
   return (
     <main className='layout'>
-        
+        <div className='fish-divider--1' />
+        <div className='fish-divider--2' />
         <section className='gender-container'>
 
           <Stack spacing='4'>
             <Flex direction='column' align='center'>
-              <div className={'user-info-title'} style={{marginTop: '4vh'}}>
+              <div className={'user-info-title'} style={{marginTop: '2vh'}}>
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
                 <span className="yellow">&nbsp;a</span>
@@ -25,7 +26,7 @@ export default function Users(props) {
             </Flex>
 
             <Flex direction='column' align='center'>
-              <div className={'user-info-title'} style={{marginBottom: '-8vh'}}>
+              <div className={'user-info-title'} style={{marginBottom: '-8vh', marginTop: '-2vh'}}>
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
               </div>

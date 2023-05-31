@@ -7,13 +7,17 @@
   align-items: center;
 }
 
-.users-background {
-  position: fixed;
-  bottom: 0px;
-  height: 10vh;
-  width: 100%;
-
+.fish-divider--1 {
+  @include fish-divider;
+  top: 5.5vh;
 }
+
+.fish-divider--2 {
+  @include fish-divider;
+  top: 54.5vh;
+}
+
+
 
 @keyframes animatedBackground {
   from {
