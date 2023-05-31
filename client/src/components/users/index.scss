@@ -7,18 +7,6 @@
   align-items: center;
 }
 
-.fish-divider--1 {
-  @include fish-divider;
-  top: 5.5vh;
-}
-
-.fish-divider--2 {
-  @include fish-divider;
-  top: 54.5vh;
-}
-
-
-
 @keyframes animatedBackground {
   from {
     background-position: 0 0;

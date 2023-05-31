@@ -11,8 +11,6 @@ export default function Users(props) {
 
   return (
     <main className='layout'>
-        <div className='fish-divider--1' />
-        <div className='fish-divider--2' />
         <section className='gender-container'>
 
           <Stack spacing='4'>
