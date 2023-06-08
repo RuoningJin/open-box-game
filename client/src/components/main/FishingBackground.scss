@@ -1,0 +1,127 @@
+
+.fishing-background {
+  
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #6a8ffe;
+  overflow: hidden;
+
+  .boat {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 20vw;
+    width: 100%;
+    background-size: 45vw;
+    height: 60vh;
+    background-image: url('../../../public/boat1.png');
+    background-repeat: no-repeat;
+    animation: boatAnimation 3s linear infinite;
+  }
+
+  // .fish {
+  //   position: absolute;
+  //   z-index: 9999;
+  //   bottom: 0;
+  //   width: 100%;
+  //   height: 300px;
+  //   background-size: 1000px;
+  // }
+  .fish1 {
+    animation: animate2 30s linear infinite;
+    background-image: url('../../../public/underwater-fish/leftS.png');
+  }
+  .fish2 {
+    animation: animate2 15s linear infinite;
+    background-image: url('../../../public/underwater-fish/leftF.png');
+  }
+  .fish3 {
+    animation: animate 15s linear infinite;
+    background-image: url('../../../public/underwater-fish/rightS.png');
+  }
+  .fish4 {
+    animation: animate 40s linear infinite;
+    background-image: url('../../../public/underwater-fish/rightSS.png');
+    bottom: 110px;
+  }
+  .fish5 {
+    animation: animate 15s linear infinite;
+    background-image: url('../../../public/underwater-fish/rightF.png');
+    bottom: 110px;
+  }
+
+  .wave-bottom {
+    z-index: 1000;
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+  }
+  .wave {
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url('../../../public/wave-strip.png');
+    background-size: 1000px 100px;
+  }
+  .wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 300px;
+  }
+  .wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 310px;
+  }
+  .wave3 {
+    animation: animate 25s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 315px;
+  }
+  .wave4 {
+    animation: animate 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 320px;
+  }
+}
+
+
+@keyframes animate {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+  background-position-x: 0;
+  }
+  100% {
+  background-position-x: -1000px;
+  }
+}
+
+@keyframes boatAnimation {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
