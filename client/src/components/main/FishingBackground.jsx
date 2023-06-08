@@ -5,6 +5,7 @@ export default function FishingBackground(props) {
   return (
     <section className='fishing-background'>
       <div className='boat'></div>
+      <div className='cloud'></div>
       
       <div className='fish fish1'></div>
       <div className='fish fish2'></div>
