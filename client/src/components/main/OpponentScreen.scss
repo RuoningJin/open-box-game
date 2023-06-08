@@ -1,0 +1,22 @@
+.opponent-screen {
+  position: absolute;
+  z-index: 99999;
+  margin-top: 0.5em;
+  margin-left: 1em;
+
+  &--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1.5em;
+    height: 1.5em;
+
+    border-radius: 2rem;
+    background-color: rgb(255, 255, 255);
+
+    img {
+      width: 1.2em;
+    }
+  }
+}
