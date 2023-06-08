@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import Application from './components/Application';
-import Trials from './components/main';
+import Game from './components/main';
 import Consent from './components/Consent';
 import Users from './components/users';
 import Searching from './components/searching-quest'
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/main",
-    element: <Trials />
+    element: <Game />
   },
   {
     path: "/consent",

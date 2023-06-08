@@ -21,7 +21,14 @@ export default function Age () {
   }
 
   return (
-    <Slider defaultValue={defaultSliderValue} min={3} max={50} step={1} onChange={(val) => setSliderValue(val)}>
+    <Slider 
+      defaultValue={defaultSliderValue} 
+      mt='15vh'
+      mb='3vh'
+      min={3} 
+      max={50} 
+      step={1} 
+      onChange={(val) => setSliderValue(val)}>
         <SliderMark value={3} {...labelStyles}>
           3
         </SliderMark>

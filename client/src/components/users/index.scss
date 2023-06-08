@@ -1,12 +1,10 @@
 @import "../../styles/variables.scss";
 @import '../../styles//mixins.scss';
 
-.users-background {
-  position: fixed;
-  bottom: 0px;
-  height: 10vh;
-  width: 100%;
-
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes animatedBackground {
@@ -22,9 +20,10 @@
 .gender-container {
   display: flex;
   justify-content: center;
+  width: 50vw;
   margin-left: 20%;
   margin-right: 20%;
-  margin-top: 10px;
+  margin-top: 2vh;
 }
 
 .consent {
@@ -41,28 +40,19 @@
 
 }
 
-.gender-title {
+.user-info-title {
   display: flex;
   justify-content: center;
+  align-items: center;
   @include confirm-button;
-  -webkit-text-stroke-width: 0.15vw;
-  font-size: 3vw;
-  top: 0;
-  cursor: default;
-  background-color: #EBEBEB;
-  border-radius: 3.75vw;
-}
-
-.age-title {
-  display: flex;
-  justify-content: center;
-  @include confirm-button;
-  -webkit-text-stroke-width: 0.15vw;
+  -webkit-text-stroke-width: 0.20vw;
   font-size: 3vw;
   cursor: default;
-  margin-bottom: -70px;
   background-color: #EBEBEB;
+  width: 10vw;
+  height: 7vh;
   border-radius: 3.75vw;
+  padding-top: 1.5vh;
 }
 
 .confirm-users {

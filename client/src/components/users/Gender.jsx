@@ -1,6 +1,7 @@
-import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import './Gender.scss';
 import classNames from 'classnames';
+import GenderItem from './GenderItem';
 
 export default function Gender(props) {
 
@@ -11,12 +12,24 @@ export default function Gender(props) {
   });
   const boySelected = classNames('gender', {
     'boy-selected': gender === 'boy',
-  })
+  });
 
   return (
     <section className='gender-selection'>
-      <img src={'/girl.png'} alt='girl' className={girlSelected} onClick={() => setGender('girl')}/>
-      <img src={'/boy.png'} alt='boy' className={boySelected} onClick={() => setGender('boy')}/>
+      <GenderItem 
+        gender={gender}
+        name='girl'
+        setGender={setGender}
+        className={girlSelected}
+        color='#F25558'
+      />
+      <GenderItem 
+        gender={gender} 
+        name='boy'
+        setGender={setGender}
+        className={boySelected}
+        color='#A3CBCE'
+      />
     </section>      
 
   )

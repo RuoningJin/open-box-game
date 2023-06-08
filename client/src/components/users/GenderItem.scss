@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+@import '../../styles//mixins.scss';
+
+.gender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  filter: grayscale(1);
+
+  img {
+    width: 12vw;
+  }
+
+  span {
+    @include confirm-button;
+    font-size: 4vw;
+    -webkit-text-stroke-width: 0.2vw;
+    color: #F25558;
+  }
+  
+  &:hover {
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+  }
+}
+
+.girl-selected {
+  filter: none;
+  color: #F25558;
+  &:hover {
+    cursor: default;
+    filter: none;
+  }
+}
+
+.boy-selected {
+  filter: none;
+  color: #A3CBCE;
+  &:hover {
+    cursor: default;
+    filter: none;
+  }
+}
