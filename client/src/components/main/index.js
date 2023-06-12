@@ -14,6 +14,12 @@ export default function Game(props) {
           <span className="green"> Your</span>
           <span className="yellow"> Bait</span>
         </div>
+
+        <div className='bait-select--baits'>
+          <img src="./baits/banana.png" alt="bait"/>
+          <img src="./baits/banana.png" alt="bait"/>
+          <img src="./baits/banana.png" alt="bait"/>
+        </div>
       </div>
 
       <OpponentScreen />

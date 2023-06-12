@@ -1,9 +1,10 @@
 @import "../../styles/variables.scss";
-@import '../../styles//mixins.scss';
+@import '../../styles/mixins.scss';
 
 .bait-select {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   
   position: absolute;
   width: 100vw;
@@ -17,8 +18,39 @@
     font-size: 7vw;
     letter-spacing: -0.03em;
     -webkit-text-stroke-color: rgb(255, 255, 255);
+    cursor: default;
+  }
+
+  &--baits {
+    display: flex;
+
+    img {
+      margin-left: 10em;
+      margin-right: 10em;
+
+      animation: glow 2s infinite alternate;
+    
+      &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 1rem hsl(0, 0%, 100%));
+        animation: none;
+      }
+    }
+    
   }
 }
+
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 1rem hsla(0, 0%, 100%, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
+  }
+}
+
+
 // .main-layout {
 //   display: flex;
 //   justify-content: center;
