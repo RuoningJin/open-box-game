@@ -28,7 +28,7 @@
       margin-left: 10em;
       margin-right: 10em;
 
-      animation: glow 2s infinite alternate;
+      animation: glow 1.5s infinite alternate;
     
       &:hover {
         cursor: pointer;
@@ -36,7 +36,27 @@
         animation: none;
       }
     }
-    
+  }
+
+  &--button {
+
+    @include confirm-button;
+    margin-top: 1em;
+    font-size: 7vw;
+    letter-spacing: -0.03em;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 3.75em;
+
+    &:hover {
+      -webkit-text-stroke-color: $green;
+    }
+
+    &:active {
+      -webkit-text-stroke-color: white;
+    }
   }
 }
 
