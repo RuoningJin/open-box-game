@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+@import '../../styles/mixins.scss';
+
+.bait-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(15, 18, 45, 0.9);
+  z-index: 999999;
+
+  &--title {
+    @include confirm-button;
+    margin-top: 1em;
+    font-size: 7vw;
+    letter-spacing: -0.03em;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    cursor: default;
+  }
+
+  &--baits {
+    display: flex;
+
+    .bait {
+      margin-left: 10em;
+      margin-right: 10em;
+
+      animation: glow 1.5s infinite alternate;
+    
+      &:hover {
+        cursor: pointer;
+        filter: drop-shadow(0 0 1rem hsl(0, 0%, 100%));
+        position: relative;
+        bottom: 20px;
+        animation: none;
+      }
+    }
+    .bait-selected {
+      cursor: pointer;
+      filter: drop-shadow(0 0 1rem hsl(0, 0%, 100%));
+      position: relative;
+      bottom: 20px;
+      animation: none;
+    }
+  }
+
+  &--button {
+
+    @include confirm-button;
+    margin-top: 1em;
+    font-size: 7vw;
+    letter-spacing: -0.03em;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    cursor: pointer;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 3.75em;
+
+    &:hover {
+      -webkit-text-stroke-color: $green;
+    }
+
+    &:active {
+      -webkit-text-stroke-color: white;
+    }
+  }
+}
+
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 1rem hsla(0, 0%, 100%, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
+  }
+}
