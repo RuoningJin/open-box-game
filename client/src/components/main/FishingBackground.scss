@@ -11,10 +11,10 @@
     position: absolute;
     z-index: 999;
     bottom: 0;
-    left: 10vw;
+    left: 15vw;
     width: 100%;
     background-size: 45vw;
-    height: 80vh;
+    height: 73vh;
     background-image: url('../../../public/boat1.png');
     background-repeat: no-repeat;
     animation: boatAnimation 3s linear infinite;
@@ -36,28 +36,28 @@
   //   height: 300px;
   //   background-size: 1000px;
   // }
-  .fish1 {
-    animation: animate2 30s linear infinite;
-    background-image: url('../../../public/underwater-fish/leftS.png');
-  }
-  .fish2 {
-    animation: animate2 15s linear infinite;
-    background-image: url('../../../public/underwater-fish/leftF.png');
-  }
-  .fish3 {
-    animation: animate 15s linear infinite;
-    background-image: url('../../../public/underwater-fish/rightS.png');
-  }
-  .fish4 {
-    animation: animate 40s linear infinite;
-    background-image: url('../../../public/underwater-fish/rightSS.png');
-    bottom: 110px;
-  }
-  .fish5 {
-    animation: animate 15s linear infinite;
-    background-image: url('../../../public/underwater-fish/rightF.png');
-    bottom: 110px;
-  }
+  // .fish1 {
+  //   animation: animate2 30s linear infinite;
+  //   background-image: url('../../../public/underwater-fish/leftS.png');
+  // }
+  // .fish2 {
+  //   animation: animate2 15s linear infinite;
+  //   background-image: url('../../../public/underwater-fish/leftF.png');
+  // }
+  // .fish3 {
+  //   animation: animate 15s linear infinite;
+  //   background-image: url('../../../public/underwater-fish/rightS.png');
+  // }
+  // .fish4 {
+  //   animation: animate 40s linear infinite;
+  //   background-image: url('../../../public/underwater-fish/rightSS.png');
+  //   bottom: 110px;
+  // }
+  // .fish5 {
+  //   animation: animate 15s linear infinite;
+  //   background-image: url('../../../public/underwater-fish/rightF.png');
+  //   bottom: 110px;
+  // }
 
   .wave-bottom {
     z-index: 1000;
