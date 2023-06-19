@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import classNames from 'classnames';
 import './index.scss';
 
 import FishingBackground from "./FishingBackground";
@@ -9,14 +10,17 @@ export default function Game(props) {
 
   const [bait, setBait] = useState('');
 
-  // const left = classNames('gender', {
-  //   'girl-selected': gender === 'girl',
-  // });
-  // const middle = classNames('gender', {
-  //   'boy-selected': gender === 'boy',
-  // });
+  const left = classNames('bait', {
+    'bait-selected': bait === 'left',
+  });
+  const middle = classNames('bait', {
+    'bait-selected': bait === 'middle',
+  });
+  const right = classNames('bait', {
+    'bait-selected': bait === 'right',
+  });
 
-  const chooseBaitHandler = () => {
+  const confirmBaitHandler = () => {
     setChooseBait(false);
   }
 
@@ -32,12 +36,24 @@ export default function Game(props) {
         </div>
 
         <div className='bait-select--baits'>
-          <img className='left' src="./baits/banana.png" alt="bait"/>
-          <img className='middle' src="./baits/banana.png" alt="bait"/>
-          <img className='right' src="./baits/banana.png" alt="bait"/>
+          <img 
+            className={left} 
+            src="./baits/banana.png" 
+            alt="bait" 
+            onClick={() => setBait('left')}/>
+          <img 
+            className={middle} 
+            src="./baits/banana.png" 
+            alt="bait" 
+            onClick={() => setBait('middle')}/>
+          <img 
+            className={right}
+            src="./baits/banana.png" 
+            alt="bait" 
+            onClick={() => setBait('right')}/>
         </div>
 
-        <div className='bait-select--button' onClick={chooseBaitHandler}>
+        <div className='bait-select--button' onClick={confirmBaitHandler}>
           <div>
             <span className="red">G</span>
             <span className="blue">o</span>

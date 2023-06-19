@@ -24,7 +24,7 @@
   &--baits {
     display: flex;
 
-    img {
+    .bait {
       margin-left: 10em;
       margin-right: 10em;
 
@@ -33,8 +33,17 @@
       &:hover {
         cursor: pointer;
         filter: drop-shadow(0 0 1rem hsl(0, 0%, 100%));
+        position: relative;
+        bottom: 20px;
         animation: none;
       }
+    }
+    .bait-selected {
+      cursor: pointer;
+      filter: drop-shadow(0 0 1rem hsl(0, 0%, 100%));
+      position: relative;
+      bottom: 20px;
+      animation: none;
     }
   }
 
