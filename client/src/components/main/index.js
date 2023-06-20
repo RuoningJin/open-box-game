@@ -30,12 +30,16 @@ export default function Game(props) {
         />
       }
 
-      {finish && <FinishScreen />
- }
+      {finish && <FinishScreen />}
       
-      <OpponentScreen />
-      <BaitScreen />
-      
+       
+      {!chooseBait && 
+        <div>
+          <OpponentScreen />
+          <BaitScreen />
+        </div>
+      }
+
       <FishingBackground />
     </>
   )
