@@ -18,7 +18,9 @@ export default function BaitSelect(props) {
   }
 
   const baitConfirmHandler = () => {
-    props.setChooseBait(false);
+    if (props.bait) {
+      props.setChooseBait(false);
+    }
   }
 
   return (
