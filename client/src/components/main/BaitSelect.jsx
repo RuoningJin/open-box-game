@@ -1,20 +1,26 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 import './BaitSelect.scss';
 
 export default function BaitSelect(props) {
+  const banana = './baits/banana.png';
+  const apple = './baits/apple.png';
+  const pineapple = './baits/pineapple.png';
+  const [position, setPosition] = useState('');
 
   const left = classNames('bait', {
-    'bait-selected': props.bait === 'left',
+    'bait-selected': position === 'left',
   });
   const middle = classNames('bait', {
-    'bait-selected': props.bait === 'middle',
+    'bait-selected': position === 'middle',
   });
   const right = classNames('bait', {
-    'bait-selected': props.bait === 'right',
+    'bait-selected': position === 'right',
   });
 
-  const baitSelectHandler = (baitPosition) => {
-    props.setBait(baitPosition);
+  const baitSelectHandler = (baitPosition, bait) => {
+    setPosition(baitPosition);
+    props.setBait(bait);
   }
 
   const baitConfirmHandler = () => {
@@ -35,19 +41,19 @@ export default function BaitSelect(props) {
       <div className='bait-select--baits'>
         <img 
           className={left} 
-          src="./baits/banana.png" 
+          src={banana}
           alt="bait" 
-          onClick={() => baitSelectHandler('left')}/>
+          onClick={() => baitSelectHandler('left', 'banana')}/>
         <img 
           className={middle} 
-          src="./baits/banana.png" 
+          src={apple}
           alt="bait" 
-          onClick={() => baitSelectHandler('middle')}/>
+          onClick={() => baitSelectHandler('middle', 'apple')}/>
         <img 
           className={right}
-          src="./baits/banana.png" 
+          src={pineapple}
           alt="bait" 
-          onClick={() => baitSelectHandler('right')}/>
+          onClick={() => baitSelectHandler('right', 'pineapple')}/>
       </div>
 
       <div className='bait-select--button' onClick={baitConfirmHandler}>
