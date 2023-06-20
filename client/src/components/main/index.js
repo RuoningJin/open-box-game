@@ -35,7 +35,7 @@ export default function Game(props) {
        
       {!chooseBait && 
         <div>
-          <OpponentScreen />
+          <OpponentScreen finish={finish}/>
           <BaitScreen />
         </div>
       }
