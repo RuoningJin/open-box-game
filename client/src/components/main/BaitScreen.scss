@@ -17,16 +17,19 @@
 
     img {
       width: 0.8em;
-      animation: glow 1s infinite alternate;
+      animation: grow 1s;
+      filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
     }
   }
 }
 
-@keyframes glow {
+@keyframes grow {
   0% {
     filter: drop-shadow(0 0 1rem hsla(0, 0%, 100%, 0.5));
+    width: 0;
   }
   100% {
     filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
+    width: 0.8em;
   }
 }

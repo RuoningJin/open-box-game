@@ -1,13 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './OpponentScreen.scss';
 
 export default function OpponentScreen(props) {
-  const [avatar, setAvatar] = useState('/opponent/girl.gif');
-  useEffect (() => {
-    if (props.finish) {
-      setAvatar('/opponent/girl-2.gif')
-    }
-  }, [props.finish])
+  const [avatar, setAvatar] = useState('/opponent/girl-2.gif');
+  setTimeout(() => {
+    setAvatar('/opponent/girl.gif')
+  }, 4000);
 
   return (
     <section className='opponent-screen'>
