@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './index.scss';
 
 import FishingBackground from "./FishingBackground";
@@ -37,11 +37,20 @@ export default function Game(props) {
     },
   }
 
-  if (!chooseBait) {
-    setTimeout(() => {
-      setFinish(true);
-    }, 5000);
-  }
+  useEffect(() => {
+    if (!chooseBait) {
+      setTimeout(() => {
+        setFinish(true);
+      }, 5000);
+      if (trials[trialId + 1]) {
+        setTimeout(() => {
+          setFinish(false);
+          setTrialId(trialId + 1);
+          setChooseBait(true);
+        }, 8000);
+      }
+    }
+  }, [chooseBait]);
 
   return (
     <>
@@ -57,6 +66,10 @@ export default function Game(props) {
       {finish && 
         <FinishScreen 
           reward={trials[trialId].reward}
+          trialId={trialId}
+          setTrialId={setTrialId}
+          finish={finish}
+          setFinish={setFinish}
         />
       }
       
