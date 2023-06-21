@@ -6,7 +6,7 @@ export default function Starter(props) {
 
   setTimeout(() => {
     setStartButton(true);
-  }, 27000);
+  }, 2000);
 
   const startHandler = () => {
     setStartButton(false);
