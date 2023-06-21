@@ -9,8 +9,8 @@ export default function FinishScreen(props) {
   return (
     <>
       <div className='finish-title'>
-        {props.reward && <span className='finish-title--text'>We Got A Fish!</span>}
-        {!props.reward && <span className='finish-title--text'>We Got Nothing.</span>}
+        {props.reward && <span className='finish-title--text'>Sally Got A Fish!</span>}
+        {!props.reward && <span className='finish-title--text'>Sally Got Nothing.</span>}
 
       </div>
       {props.reward &&
