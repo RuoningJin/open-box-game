@@ -19,19 +19,19 @@ export default function Game(props) {
   const trials = {
     1: {
       id: 1,
-      baits: ['apple', 'banana', 'pineapple'],
+      baits: ['apple', 'car2', 'flower1'],
       emotionalFeedback: 'positive',
       reward: true
     },
     2: {
       id: 2,
-      baits: ['pineapple', 'banana', 'apple'],
+      baits: ['pineapple', 'flower3', 'car3'],
       emotionalFeedback: 'negative',
       reward: false
     },
     3: {
       id: 3,
-      baits: ['banana', 'apple', 'pineapple'],
+      baits: ['car1', 'flower2', 'pineapple'],
       emotionalFeedback: 'neutral',
       reward: true
     },
