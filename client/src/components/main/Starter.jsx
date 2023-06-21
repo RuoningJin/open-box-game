@@ -12,12 +12,17 @@ export default function Starter(props) {
     setStartButton(false);
     props.setStarter(false);
     props.setChooseBait(true);
+    props.fullScreenHandler.enter();
   }
 
   return (
     <div className='start'>
       {startButton && 
-        <span className='start-button' onClick={startHandler}>Let's Fish!</span>
+        <span 
+          className='start-button' 
+          onClick={startHandler}>
+          Let's Fish!
+        </span>
       }
     </div> 
   )

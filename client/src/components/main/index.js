@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+
 import './index.scss';
 
 import FishingBackground from "./FishingBackground";
@@ -11,7 +13,6 @@ import Starter from './Starter';
 
 export default function Game(props) {
   const [starter, setStarter] = useState(true);
-  const [startButton, setStartButton] = useState(false);
   const [chooseBait, setChooseBait] = useState(false);
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false)
@@ -54,38 +55,47 @@ export default function Game(props) {
     }
   }, [chooseBait]);
 
+  const fullScreenHandler = useFullScreenHandle();
+  
   return (
     <>
-      {starter && <Starter setStarter={setStarter} setChooseBait={setChooseBait}/>}
-
-      {chooseBait && 
-        <BaitSelect 
-          bait={bait} 
-          baitsPool={trials[trialId].baits}
-          setBait={setBait} 
-          setChooseBait={setChooseBait}
+      {starter && 
+        <Starter 
+          setStarter={setStarter} 
+          setChooseBait={setChooseBait} 
+          fullScreenHandler={fullScreenHandler}
         />
       }
+      <FullScreen handle={fullScreenHandler}>
+        {chooseBait && 
+          <BaitSelect 
+            bait={bait} 
+            baitsPool={trials[trialId].baits}
+            setBait={setBait} 
+            setChooseBait={setChooseBait}
+          />
+        }
 
-      {finish && 
-        <FinishScreen 
-          reward={trials[trialId].reward}
-          trialId={trialId}
-          setTrialId={setTrialId}
-          finish={finish}
-          setFinish={setFinish}
-        />
-      }
-      
-       
-      {!chooseBait && 
-        <div>
-          <OpponentScreen starter={starter}/>
-          {!starter && <BaitScreen bait={bait}/>}
-        </div>
-      }
+        {finish && 
+          <FinishScreen 
+            reward={trials[trialId].reward}
+            trialId={trialId}
+            setTrialId={setTrialId}
+            finish={finish}
+            setFinish={setFinish}
+          />
+        }
+        
+        
+        {!chooseBait && 
+          <div>
+            <OpponentScreen starter={starter}/>
+            {!starter && <BaitScreen bait={bait}/>}
+          </div>
+        }
 
-      <FishingBackground />
+        <FishingBackground />
+      </FullScreen>
     </>
   )
 }
