@@ -1,7 +1,7 @@
 .bait-screen {
   position: absolute;
   z-index: 99999;
-  margin-top: 2em;
+  margin-top: 2.1em;
   margin-left: 0.5em;
 
   &--container {
@@ -13,7 +13,7 @@
     height: 1.5em;
 
     border-radius: 2rem;
-    background-color: rgb(174, 174, 174);
+    background-color: rgb(255, 255, 255);
 
     img {
       width: 0.8em;

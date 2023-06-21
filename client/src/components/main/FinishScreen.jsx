@@ -9,17 +9,21 @@ export default function FinishScreen(props) {
   return (
     <>
       <div className='finish-title'>
-        <span className='finish-title--text'>We Got A Fish!</span>
+        {props.reward && <span className='finish-title--text'>We Got A Fish!</span>}
+        {!props.reward && <span className='finish-title--text'>We Got Nothing.</span>}
+
       </div>
-      <section className='finish-screen'>
-        <Confetti
-          width={width}
-          height={height}
-          recycle={false}
-          numberOfPieces={2000}
-        />
-        <img className='finish-screen--fish' src={'./fish/fish1.png'} alt='fish'/>
-      </section>
+      {props.reward &&
+        <section className='finish-screen'>
+          <Confetti
+            width={width}
+            height={height}
+            recycle={true}
+            numberOfPieces={200}
+          />
+          <img className='finish-screen--fish' src={'./fish/fish1.png'} alt='fish'/>
+        </section>
+      } 
     </>
   )
 }

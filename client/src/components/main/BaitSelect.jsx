@@ -3,10 +3,8 @@ import classNames from 'classnames';
 import './BaitSelect.scss';
 
 export default function BaitSelect(props) {
-  const banana = './baits/banana.png';
-  const apple = './baits/apple.png';
-  const pineapple = './baits/pineapple.png';
   const [position, setPosition] = useState('');
+  const [bait1, bait2, bait3] = props.baitsPool;
 
   const left = classNames('bait', {
     'bait-selected': position === 'left',
@@ -41,19 +39,19 @@ export default function BaitSelect(props) {
       <div className='bait-select--baits'>
         <img 
           className={left} 
-          src={banana}
+          src={`./baits/${bait1}.png`}
           alt="bait" 
-          onClick={() => baitSelectHandler('left', 'banana')}/>
+          onClick={() => baitSelectHandler('left', bait1)}/>
         <img 
           className={middle} 
-          src={apple}
+          src={`./baits/${bait2}.png`}
           alt="bait" 
-          onClick={() => baitSelectHandler('middle', 'apple')}/>
+          onClick={() => baitSelectHandler('middle', bait2)}/>
         <img 
           className={right}
-          src={pineapple}
+          src={`./baits/${bait3}.png`}
           alt="bait" 
-          onClick={() => baitSelectHandler('right', 'pineapple')}/>
+          onClick={() => baitSelectHandler('right', bait3)}/>
       </div>
 
       <div className='bait-select--button' onClick={baitConfirmHandler}>
