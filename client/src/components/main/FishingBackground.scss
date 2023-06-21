@@ -17,7 +17,9 @@
     height: 73vh;
     background-image: url('../../../public/boat1.png');
     background-repeat: no-repeat;
-    animation: boatAnimation 3s linear infinite;
+    animation-name: boatAnimation, boatEntry;
+    animation-duration: 3s, 2s;
+    animation-iteration-count: infinite, 1;
   }
 
   .cloud {
@@ -131,6 +133,15 @@
   }
   50% {
     transform: translateY(-1vh) translateX(0.5vw);
+  }
+}
+
+@keyframes boatEntry {
+  0% {
+    transform: translateY(0) translateX(-100%);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
   }
 }
 

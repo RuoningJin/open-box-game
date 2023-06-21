@@ -6,11 +6,13 @@ import OpponentScreen from './OpponentScreen';
 import BaitScreen from './BaitScreen';
 import BaitSelect from './BaitSelect';
 import FinishScreen from './FinishScreen';
+import Starter from './Starter';
 
 
 export default function Game(props) {
-  const [chooseBait, setChooseBait] = useState(true);
-
+  const [starter, setStarter] = useState(true);
+  const [startButton, setStartButton] = useState(false);
+  const [chooseBait, setChooseBait] = useState(false);
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false)
   const [trialId, setTrialId] = useState(1);
@@ -38,7 +40,7 @@ export default function Game(props) {
   }
 
   useEffect(() => {
-    if (!chooseBait) {
+    if (!chooseBait && !starter) {
       setTimeout(() => {
         setFinish(true);
       }, 5000);
@@ -54,6 +56,8 @@ export default function Game(props) {
 
   return (
     <>
+      {starter && <Starter setStarter={setStarter} setChooseBait={setChooseBait}/>}
+
       {chooseBait && 
         <BaitSelect 
           bait={bait} 
@@ -76,8 +80,8 @@ export default function Game(props) {
        
       {!chooseBait && 
         <div>
-          <OpponentScreen />
-          <BaitScreen bait={bait}/>
+          <OpponentScreen starter={starter}/>
+          {!starter && <BaitScreen bait={bait}/>}
         </div>
       }
 
