@@ -5,28 +5,26 @@ import GenderItem from './GenderItem';
 
 export default function Gender(props) {
 
-  const [gender, setGender] = useState('');
-
   const girlSelected = classNames('gender', {
-    'girl-selected': gender === 'girl',
+    'girl-selected': props.gender === 'girl',
   });
   const boySelected = classNames('gender', {
-    'boy-selected': gender === 'boy',
+    'boy-selected': props.gender === 'boy',
   });
 
   return (
     <section className='gender-selection'>
       <GenderItem 
-        gender={gender}
+        gender={props.gender}
         name='girl'
-        setGender={setGender}
+        setGender={props.setGender}
         className={girlSelected}
         color='#F25558'
       />
       <GenderItem 
-        gender={gender} 
+        gender={props.gender} 
         name='boy'
-        setGender={setGender}
+        setGender={props.setGender}
         className={boySelected}
         color='#A3CBCE'
       />

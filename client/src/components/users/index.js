@@ -1,4 +1,4 @@
-// import { useRef, useState, useEffect } from 'react';
+import { useState } from 'react';
 import './index.scss';
 import Gender from './Gender';
 import Age from './Age';
@@ -6,8 +6,14 @@ import { Stack, Flex} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 
 export default function Users(props) {
+  const [gender, setGender] = useState('');
+
   const navigate = useNavigate();
-  const handleUserClick = () => navigate('/main');
+  const handleUserClick = () => {
+    if (gender) {
+      navigate('/main');
+    }
+  };
 
   return (
     <main className='layout'>
@@ -20,7 +26,7 @@ export default function Users(props) {
                 <span className="blue">&nbsp;am</span>
                 <span className="yellow">&nbsp;a</span>
               </div>
-              <Gender />
+              <Gender gender={gender} setGender={setGender}/>
             </Flex>
 
             <Flex direction='column' align='center'>
