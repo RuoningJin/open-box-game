@@ -18,6 +18,7 @@ export default function Game(props) {
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false);
   const [trialId, setTrialId] = useState(1);
+  const [session, setSession] = useState(1);
   const [sessionBreak, setSessionBreak] = useState(false);
 
   //hard coded trials, will be replaced by real sqldata
@@ -68,13 +69,22 @@ export default function Game(props) {
 
   useEffect(() => {
     if (!chooseBait && !starter && !sessionBreak) {
-      setTimeout(() => {
+      if (session === 1) {
+        setTimeout(() => {
+          setFinish(true);
+        }, 5000);
+      };
+      if (session === 2) {
         setFinish(true);
-      }, 5000);
+        setTimeout(() => {
+          setFinish(false);
+        }, 3000);
+      };
       if (trials[trialId + 1] && trials[trialId].session !== trials[trialId + 1].session) {
         setTimeout(() => {
           setFinish(false);
           setSessionBreak(true);
+          setSession(trials[trialId + 1].session)
           setBait('');
         }, 8000);
       } else if (trials[trialId + 1]) {
