@@ -21,12 +21,11 @@
     height: 3.5em;
     text-align: center;
     @include confirm-button;
-    font-size: 15em;
+    font-size: 10em;
   }
   &--button {
     @include confirm-button;
     font-size: 10em;
-    margin-top: -3em;
   
     &:hover {
       text-shadow: 7px 15px grey;

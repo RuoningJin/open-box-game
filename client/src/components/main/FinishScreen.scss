@@ -40,6 +40,20 @@
     background-size: 3em;
     animation: flyIn 0.5s linear;
   }
+  &--text2 {
+    width: 100%;
+    height: 4.5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @include confirm-button;
+    font-size: 16em;
+    color: rgb(234, 249, 255);
+    background-color: #00b4cc;
+    background-image: url("https://www.transparenttextures.com/patterns/subtle-grey.png");
+    background-size: 3em;
+    animation: flyIn 0.5s linear;
+  }
 }
 
 @keyframes expand {

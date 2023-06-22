@@ -10,7 +10,7 @@ export default function SessionBreak(props) {
   return (
     <>
       <div className='break-title'>
-        <span className='break-title--text'>Let's Take a Break!</span>
+        <span className='break-title--text'>You have finished session 1.<br/>One more session to go.</span>
         <button type="button" className='break-title--button' onClick={handleUserClick}>
           <span className="red">C</span>
           <span className="blue">o</span>

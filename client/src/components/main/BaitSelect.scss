@@ -27,6 +27,7 @@
     .bait {
       margin-left: 10em;
       margin-right: 10em;
+      margin-top: 5em;
 
       animation: glow 1.5s infinite alternate;
     
@@ -50,7 +51,7 @@
   &--button {
 
     @include confirm-button;
-    margin-top: 1em;
+    margin-top: 0.5em;
     font-size: 7vw;
     letter-spacing: -0.03em;
     -webkit-text-stroke-color: rgb(255, 255, 255);
