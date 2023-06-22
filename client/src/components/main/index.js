@@ -137,7 +137,7 @@ export default function Game(props) {
           />
         }
         
-        {!chooseBait && 
+        {!chooseBait && !finish &&
           <div>
             <OpponentScreen starter={starter}/>
             {!starter && <BaitScreen bait={bait}/>}
