@@ -8,12 +8,15 @@ export default function BaitSelect(props) {
 
   const left = classNames('bait', {
     'bait-selected': position === 'left',
+    'bait-negative': position && position !== 'left',
   });
   const middle = classNames('bait', {
     'bait-selected': position === 'middle',
+    'bait-negative': position && position !== 'middle',
   });
   const right = classNames('bait', {
     'bait-selected': position === 'right',
+    'bait-negative': position && position !== 'right',
   });
 
   const baitSelectHandler = (baitPosition, bait) => {

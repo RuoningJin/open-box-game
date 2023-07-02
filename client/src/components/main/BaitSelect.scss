@@ -46,6 +46,10 @@
       bottom: 20px;
       animation: none;
     }
+    .bait-negative {
+      filter: grayscale(1);
+      animation: none;
+    }
   }
 
   &--button {

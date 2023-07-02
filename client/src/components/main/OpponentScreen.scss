@@ -2,21 +2,24 @@
   position: absolute;
   z-index: 99999;
   margin-top: 0.5em;
-  margin-left: 0.5em;
+  right: 0.5em;
 
   &--container {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
 
     border-radius: 2rem;
     background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: 0.2em;
+    border-color: rgba(255, 166, 0, 0.482);
 
     img {
-      width: 1.2em;
+      width: 2em;
     }
   }
 }

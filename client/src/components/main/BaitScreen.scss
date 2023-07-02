@@ -1,22 +1,25 @@
 .bait-screen {
   position: absolute;
   z-index: 99999;
-  margin-top: 2.1em;
-  margin-left: 0.5em;
+  margin-top: 3.5em;
+  right: 0.5em;
 
   &--container {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 1.5em;
-    height: 1.5em;
+    width: 3em;
+    height: 3em;
 
     border-radius: 2rem;
     background-color: rgb(255, 255, 255);
+    border: solid;
+    border-width: 0.2em;
+    border-color: rgba(21, 212, 255, 0.667);
 
     img {
-      width: 0.8em;
+      width: 1.5em;
       animation: grow 1s;
       filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
     }
@@ -30,6 +33,6 @@
   }
   100% {
     filter: drop-shadow(0 0 3rem hsl(0, 0%, 100%));
-    width: 0.8em;
+    width: 1.5rem;
   }
 }
