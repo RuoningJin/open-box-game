@@ -21,6 +21,20 @@
     animation-duration: 3s, 2s;
     animation-iteration-count: infinite, 1;
   }
+  .boat2 {
+    position: absolute;
+    z-index: 999;
+    bottom: 0;
+    left: 15vw;
+    width: 100%;
+    background-size: 45vw;
+    height: 60vh;
+    background-image: url('../../../public/boat2.png');
+    background-repeat: no-repeat;
+    animation-name: boatAnimation, boatEntry;
+    animation-duration: 3s, 2s;
+    animation-iteration-count: infinite, 1;
+  }
 
   .cloud {
     width: 100%;
@@ -28,6 +42,13 @@
     background-size: 200vh;
     animation: cloudAnimation 240s linear infinite;
     background-image: url('../../../public/cloud.png');
+  }
+  .trees {
+    width: 100%;
+    height: 100%;
+    background-size: 200vh;
+    animation: cloudAnimation 240s linear infinite;
+    background-image: url('../../../public/trees1.png');
   }
 
   // .fish {

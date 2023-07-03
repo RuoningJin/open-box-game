@@ -4,8 +4,11 @@ export default function FishingBackground(props) {
 
   return (
     <section className='fishing-background'>
-      <div className='boat'></div>
-      <div className='cloud'></div>
+      {props.session === 1 && <div className='boat'></div>}
+      {props.session === 2 && <div className='boat2'></div>}
+      
+      {props.session === 1 && <div className='cloud'></div>}
+      {props.session === 2 && <div className='trees'></div>}
       
       <div className='fish fish1'></div>
       <div className='fish fish2'></div>

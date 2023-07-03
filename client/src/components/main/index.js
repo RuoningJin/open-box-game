@@ -144,7 +144,7 @@ export default function Game(props) {
           </div>
         }
 
-        <FishingBackground />
+        <FishingBackground session={session}/>
       </FullScreen>
     </>
   )
