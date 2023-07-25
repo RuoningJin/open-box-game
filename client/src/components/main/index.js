@@ -11,7 +11,6 @@ import FinishScreen from './FinishScreen';
 import Starter from './Starter';
 import SessionBreak from './SessionBreak';
 
-
 export default function Game(props) {
   const [starter, setStarter] = useState(true);
   const [chooseBait, setChooseBait] = useState(false);
@@ -20,6 +19,7 @@ export default function Game(props) {
   const [trialId, setTrialId] = useState(1);
   const [session, setSession] = useState(1);
   const [sessionBreak, setSessionBreak] = useState(false);
+  const [shuffledTrials, setShuffledTrials] = useState();
 
   //hard coded trials, will be replaced by real sqldata
   const trials = {
@@ -107,6 +107,7 @@ export default function Game(props) {
           setStarter={setStarter} 
           setChooseBait={setChooseBait} 
           fullScreenHandler={fullScreenHandler}
+          setShuffledTrials={setShuffledTrials}
         />
       }
       <FullScreen handle={fullScreenHandler}>
