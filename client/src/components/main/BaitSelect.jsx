@@ -1,10 +1,22 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import './BaitSelect.scss';
+import {randomNum} from '../../helpers/trialHelper'
+import { useEffect } from 'react';
 
 export default function BaitSelect(props) {
   const [position, setPosition] = useState('');
-  const [bait1, bait2, bait3] = props.baitsPool;
+  const [bait1, setBait1] = useState('');
+  const [bait2, setBait2] = useState('');
+  const [bait3, setBait3] = useState('');
+
+  const {bait_1_category, bait_2_category, bait_3_category} = props.baitsPool;  
+
+  useEffect(() => {
+    setBait1(randomNum(bait_1_category));
+    setBait2(randomNum(bait_2_category));
+    setBait3(randomNum(bait_3_category));
+  }, [props.baitsPool]);
 
   const left = classNames('bait', {
     'bait-selected': position === 'left',

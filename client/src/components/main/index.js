@@ -20,52 +20,13 @@ export default function Game(props) {
   const [session, setSession] = useState(1);
   const [sessionBreak, setSessionBreak] = useState(false);
   const [shuffledTrials, setShuffledTrials] = useState();
-
-  //hard coded trials, will be replaced by real sqldata
-  const trials = {
-    1: {
-      id: 1,
-      baits: ['apple', 'car2', 'flower1'],
-      emotionalFeedback: 'positive',
-      reward: true,
-      session: 1
-    },
-    2: {
-      id: 2,
-      baits: ['pineapple', 'flower3', 'car3'],
-      emotionalFeedback: 'negative',
-      reward: false,
-      session: 1
-    },
-    3: {
-      id: 3,
-      baits: ['car1', 'flower2', 'pineapple'],
-      emotionalFeedback: 'neutral',
-      reward: true,
-      session: 1
-    },
-    4: {
-      id: 4,
-      baits: ['apple', 'car2', 'flower1'],
-      emotionalFeedback: 'positive',
-      reward: true,
-      session: 2
-    },
-    5: {
-      id: 5,
-      baits: ['pineapple', 'flower3', 'car3'],
-      emotionalFeedback: 'negative',
-      reward: false,
-      session: 2
-    },
-    6: {
-      id: 6,
-      baits: ['car1', 'flower2', 'pineapple'],
-      emotionalFeedback: 'neutral',
-      reward: true,
-      session: 2
-    }
-  }
+  const [currentTrial, setCurrentTrial] = useState();
+  const [feedback, setFeedback] = useState({
+    1: {positive: 0.8, reward: 0.8}, 
+    2: {positive: 0.2, reward: 0.2}, 
+    3: {positive: 0.8, reward: 0.2}, 
+    4: {positive: 0.2, reward: 0.8}
+  });
 
   useEffect(() => {
     if (!chooseBait && !starter && !sessionBreak) {
@@ -80,14 +41,14 @@ export default function Game(props) {
           setFinish(false);
         }, 3000);
       };
-      if (trials[trialId + 1] && trials[trialId].session !== trials[trialId + 1].session) {
+      if (shuffledTrials[trialId + 1] && shuffledTrials[trialId].session !== shuffledTrials[trialId + 1].session) {
         setTimeout(() => {
           setFinish(false);
           setSessionBreak(true);
-          setSession(trials[trialId + 1].session)
+          setSession(shuffledTrials[trialId + 1].session)
           setBait('');
         }, 8000);
-      } else if (trials[trialId + 1]) {
+      } else if (shuffledTrials[trialId + 1]) {
         setTimeout(() => {
           setFinish(false);
           setTrialId(trialId + 1);
@@ -122,7 +83,7 @@ export default function Game(props) {
         {chooseBait && 
           <BaitSelect 
             bait={bait} 
-            baitsPool={trials[trialId].baits}
+            baitsPool={shuffledTrials[trialId]}
             setBait={setBait} 
             setChooseBait={setChooseBait}
           />
@@ -130,7 +91,7 @@ export default function Game(props) {
 
         {finish && 
           <FinishScreen 
-            reward={trials[trialId].reward}
+            reward={shuffledTrials[trialId].reward}
             trialId={trialId}
             setTrialId={setTrialId}
             finish={finish}

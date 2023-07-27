@@ -43,3 +43,19 @@ export function orderAllTrials(trials) {
     return newTrials;
   }  
 }
+
+export function randomNum(baitCategory) {
+  let add;
+
+  if (baitCategory === 1) {
+    add = 1;
+  } else if (baitCategory === 2) {
+    add = 4
+  } else if (baitCategory === 3) {
+    add = 7
+  } else if (baitCategory === 4) {
+    add = 10
+  }
+
+  return Math.floor(Math.random() * 3) + add;
+}
