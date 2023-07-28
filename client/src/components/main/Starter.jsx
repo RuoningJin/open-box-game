@@ -6,7 +6,7 @@ import {orderAllTrials} from "../../helpers/trialHelper";
 export default function Starter(props) {
   const [startButton, setStartButton] = useState(false);
   
-  const allTrials = useApplicationData();
+  const {allTrials} = useApplicationData();
 
   setTimeout(() => {
     setStartButton(true);

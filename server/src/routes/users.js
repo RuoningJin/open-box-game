@@ -3,7 +3,9 @@ const router = require("express").Router();
 module.exports = db => {
   router.get("/users", (request, response) => {
     db.query(`
-      SELECT * from users;
+      SELECT * from users
+      ORDER BY id DESC
+      LIMIT 1;
     `).then(({ rows: users }) => {
       response.json(users);
     });
