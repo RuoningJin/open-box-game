@@ -4,14 +4,32 @@ import Gender from './Gender';
 import Age from './Age';
 import { Stack, Flex} from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 export default function Users(props) {
   const [gender, setGender] = useState('');
 
+  const defaultSliderValue = 25;
+  const [sliderValue, setSliderValue] = useState(defaultSliderValue);
+
   const navigate = useNavigate();
   const handleUserClick = () => {
     if (gender) {
-      navigate('/main');
+      let isFemale;
+
+      if (gender === 'girl') {
+        isFemale = true;
+      } else if (gender === 'boy') {
+        isFemale = false;
+      }
+      
+      return axios.post(`http://localhost:8001/api/users/`, {
+        isFemale,
+        age: sliderValue
+      })
+      .then(() => {
+        navigate('/main');
+      })
     }
   };
 
@@ -34,7 +52,11 @@ export default function Users(props) {
                 <span className="red">I</span>
                 <span className="blue">&nbsp;am</span>
               </div>
-              <Age />
+              <Age 
+                sliderValue={sliderValue} 
+                setSliderValue={setSliderValue} 
+                defaultSliderValue={defaultSliderValue}
+              />
             </Flex>
 
             <button type="button" className={'confirm-users'} onClick={handleUserClick}>

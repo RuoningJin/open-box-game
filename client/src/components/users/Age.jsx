@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { 
   Box, 
   Slider,
@@ -8,9 +7,9 @@ import {
   SliderMark,
 } from '@chakra-ui/react'
 
-export default function Age () {
-  const defaultSliderValue = 25;
-  const [sliderValue, setSliderValue] = useState(defaultSliderValue)
+export default function Age (props) {
+  // const defaultSliderValue = 25;
+  // const [sliderValue, setSliderValue] = useState(defaultSliderValue);
 
   const labelStyles = {
     fontFamily: 'Luckiest Guy',
@@ -22,13 +21,13 @@ export default function Age () {
 
   return (
     <Slider 
-      defaultValue={defaultSliderValue} 
+      defaultValue={props.defaultSliderValue} 
       mt='15vh'
       mb='3vh'
       min={3} 
       max={50} 
       step={1} 
-      onChange={(val) => setSliderValue(val)}>
+      onChange={(val) => props.setSliderValue(val)}>
         <SliderMark value={3} {...labelStyles}>
           3
         </SliderMark>
@@ -36,7 +35,7 @@ export default function Age () {
           50
         </SliderMark>
         <SliderMark
-          value={sliderValue}
+          value={props.sliderValue}
           textAlign='center'
           color='grey'
           mt='-65'
@@ -46,7 +45,7 @@ export default function Age () {
           fontFamily='Luckiest Guy'
           left='0'
         >
-          {sliderValue} Years Old
+          {props.sliderValue} Years Old
         </SliderMark>
       <SliderTrack bg='red.100'>
         <Box position='relative' right={10} />

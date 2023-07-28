@@ -11,6 +11,7 @@ const app = express();
 const db = require("./db");
 
 const trials = require("./routes/trials");
+const users = require("./routes/users");
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -32,6 +33,7 @@ module.exports = function application() {
   app.use(helmet());
   app.use(bodyparser.json());
   app.use("/api", trials(db));
+  app.use("/api", users(db));
 
   Promise.all([
     read(path.resolve(__dirname, `db/schema/create.sql`)),
