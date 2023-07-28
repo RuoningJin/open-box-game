@@ -6,13 +6,14 @@ import {orderAllTrials} from "../../helpers/trialHelper";
 export default function Starter(props) {
   const [startButton, setStartButton] = useState(false);
   
-  const {allTrials} = useApplicationData();
+  const {user, allTrials} = useApplicationData();
 
   setTimeout(() => {
     setStartButton(true);
   }, 2000);
 
   const startHandler = () => {
+    props.setUserId(user.id);
     props.setShuffledTrials(orderAllTrials(allTrials));
     setStartButton(false);
     props.setStarter(false);

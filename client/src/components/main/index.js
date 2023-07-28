@@ -13,6 +13,7 @@ import SessionBreak from './SessionBreak';
 
 export default function Game(props) {
   const [starter, setStarter] = useState(true);
+  const [userId, setUserId] = useState();
   const [chooseBait, setChooseBait] = useState(false);
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false);
@@ -67,6 +68,7 @@ export default function Game(props) {
       {starter && 
         <Starter 
           setStarter={setStarter} 
+          setUserId={setUserId}
           setChooseBait={setChooseBait} 
           fullScreenHandler={fullScreenHandler}
           setShuffledTrials={setShuffledTrials}
@@ -83,6 +85,7 @@ export default function Game(props) {
         }
         {chooseBait && 
           <BaitSelect 
+            userId={userId}
             bait={bait} 
             baitsPool={shuffledTrials[trialId]}
             setBait={setBait} 

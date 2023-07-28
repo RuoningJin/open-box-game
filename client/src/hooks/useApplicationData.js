@@ -14,10 +14,10 @@ export default function useApplicationData (initial) {
         axios.get('http://localhost:8001/api/trials')
       ])
         .then((all) => {
-          setState(prev => ({...prev, user: all[0].data, allTrials: all[1].data}));
+          setState(prev => ({...prev, user: all[0].data[0], allTrials: all[1].data}));
         });
     }
   }, []);
 
-  return {state};
+  return state;
 }

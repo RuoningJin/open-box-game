@@ -12,7 +12,6 @@ module.exports = db => {
   });
 
   router.post("/users", (request, response) => {
-    console.log(request.body);
     const { isFemale, age } = request.body;
 
     db.query(`
