@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import classNames from 'classnames';
 import './BaitSelect.scss';
 import {randomNum} from '../../helpers/trialHelper'
+import {updateFeedback} from '../../helpers/feedbackHelper'
+
 import { useEffect } from 'react';
 
 export default function BaitSelect(props) {
@@ -9,6 +11,12 @@ export default function BaitSelect(props) {
   const [bait1, setBait1] = useState('');
   const [bait2, setBait2] = useState('');
   const [bait3, setBait3] = useState('');
+  const currentFeedback = useRef({
+    1: {positive: [0.8, 0.2], reward: [0.8, 0.2], count: 10}, 
+    2: {positive: [0.2, 0.8], reward: [0.2, 0.8], count: 10}, 
+    3: {positive: [0.8, 0.2], reward: [0.2, 0.8], count: 10}, 
+    4: {positive: [0.2, 0.8], reward: [0.8, 0.2], count: 10}
+  });
 
   const {bait_1_category, bait_2_category, bait_3_category} = props.baitsPool;  
 
@@ -40,6 +48,10 @@ export default function BaitSelect(props) {
     if (props.bait) {
       props.setChooseBait(false);
       console.log(props.userId);
+      const {isPositive, hasReward, feedback} = updateFeedback(props.bait, currentFeedback);
+      props.setIsPositive(isPositive);
+      props.setHasReward(hasReward);
+      currentFeedback.current = {...feedback};
     }
   }
 

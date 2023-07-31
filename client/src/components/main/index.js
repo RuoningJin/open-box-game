@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 import './index.scss';
@@ -22,13 +22,15 @@ export default function Game(props) {
   const [sessionBreak, setSessionBreak] = useState(false);
   const [shuffledTrials, setShuffledTrials] = useState();
   const [currentTrial, setCurrentTrial] = useState();
+  const [isPositive, setIsPositive] = useState();
+  const [hasReward, setHasReward] = useState();
   
-  const [feedback, setFeedback] = useState({
-    1: {positive: 0.8, reward: 0.8}, 
-    2: {positive: 0.2, reward: 0.2}, 
-    3: {positive: 0.8, reward: 0.2}, 
-    4: {positive: 0.2, reward: 0.8}
-  });
+  // const [feedback, setFeedback] = useState({
+  //   1: {positive: 0.8, reward: 0.8}, 
+  //   2: {positive: 0.2, reward: 0.2}, 
+  //   3: {positive: 0.8, reward: 0.2}, 
+  //   4: {positive: 0.2, reward: 0.8}
+  // });
 
   useEffect(() => {
     if (!chooseBait && !starter && !sessionBreak) {
@@ -90,12 +92,16 @@ export default function Game(props) {
             baitsPool={shuffledTrials[trialId]}
             setBait={setBait} 
             setChooseBait={setChooseBait}
+            setIsPositive={setIsPositive}
+            setHasReward={setHasReward}
+
           />
         }
 
         {finish && 
           <FinishScreen 
-            reward={shuffledTrials[trialId].reward}
+            hasReward={hasReward}
+            isPositive={isPositive}
             trialId={trialId}
             setTrialId={setTrialId}
             finish={finish}

@@ -1,6 +1,4 @@
-import { useRef } from "react";
-
-export default function useFeedback (bait, curFeedback) {
+export function updateFeedback (bait, curFeedback) {
   const originalFeedback = {
     1: {positive: [0.8, 0.2], reward: [0.8, 0.2], count: 10}, 
     2: {positive: [0.2, 0.8], reward: [0.2, 0.8], count: 10}, 
@@ -8,7 +6,9 @@ export default function useFeedback (bait, curFeedback) {
     4: {positive: [0.2, 0.8], reward: [0.8, 0.2], count: 10}
   };
 
-  const feedback = {...curFeedback};
+  const feedback = {...curFeedback.current};
+
+  console.log(feedback[4]);
 
   let isPositive;
   let hasReward;
@@ -20,14 +20,13 @@ export default function useFeedback (bait, curFeedback) {
   }
 
   if (bait < 4) {
-    if (Math.random() <= feedback[1].positive[0]) {
+    if (feedback[1].positive[0] && Math.random() <= feedback[1].positive[0]) {
       const newPositive = newFeedbackItem(feedback[1], 'positive', 0);
       const newCount = feedback[1].count - 1;
       isPositive = true;
 
       feedback[1] = {
-        ...feedback,
-        1: {...feedback[1], positive: newPositive, count: newCount}
+        ...feedback[1], positive: newPositive, count: newCount
       }
 
     } else {
@@ -36,18 +35,16 @@ export default function useFeedback (bait, curFeedback) {
       isPositive = false;
 
       feedback[1] = {
-        ...feedback,
-        1: {...feedback[1], positive: newPositive, count: newCount}
+        ...feedback[1], positive: newPositive, count: newCount
       }
     }
 
-    if (Math.random() <= feedback[1].reward[0]) {
+    if (feedback[1].reward[0] && Math.random() <= feedback[1].reward[0]) {
       const newReward = newFeedbackItem(feedback[1], 'reward', 0);
       hasReward = true;
 
       feedback[1] = {
-        ...feedback,
-        1: {...feedback[1], reward: newReward}
+        ...feedback[1], reward: newReward
       }
 
     } else {
@@ -55,20 +52,18 @@ export default function useFeedback (bait, curFeedback) {
       hasReward = false;
 
       feedback[1] = {
-        ...feedback,
-        1: {...feedback[1], reward: newReward}
+        ...feedback[1], reward: newReward
       }
     }
   } else if (bait >= 4 && bait < 7) {
 
-    if (Math.random() <= feedback[2].positive[0]) {
+    if (feedback[2].positive[0] && Math.random() <= feedback[2].positive[0]) {
       const newPositive = newFeedbackItem(feedback[2], 'positive', 0);
       const newCount = feedback[2].count - 1;
       isPositive = true;
 
       feedback[2] = {
-        ...feedback,
-        1: {...feedback[2], positive: newPositive, count: newCount}
+        ...feedback[2], positive: newPositive, count: newCount
       }
 
     } else {
@@ -77,18 +72,16 @@ export default function useFeedback (bait, curFeedback) {
       isPositive = false;
 
       feedback[2] = {
-        ...feedback,
-        1: {...feedback[2], positive: newPositive, count: newCount}
+        ...feedback[2], positive: newPositive, count: newCount
       }
     }
 
-    if (Math.random() <= feedback[2].reward[0]) {
+    if (feedback[2].reward[0] && Math.random() <= feedback[2].reward[0]) {
       const newReward = newFeedbackItem(feedback[2], 'reward', 0);
       hasReward = true;
 
       feedback[2] = {
-        ...feedback,
-        1: {...feedback[2], reward: newReward}
+        ...feedback[2], reward: newReward
       }
 
     } else {
@@ -96,21 +89,19 @@ export default function useFeedback (bait, curFeedback) {
       hasReward = false;
 
       feedback[2] = {
-        ...feedback,
-        1: {...feedback[2], reward: newReward}
+        ...feedback[2], reward: newReward
       }
     }
 
   } else if (bait >= 7 && bait < 10) {
 
-    if (Math.random() <= feedback[3].positive[0]) {
+    if (feedback[3].positive[0] && Math.random() <= feedback[3].positive[0]) {
       const newPositive = newFeedbackItem(feedback[3], 'positive', 0);
       const newCount = feedback[3].count - 1;
       isPositive = true;
 
       feedback[3] = {
-        ...feedback,
-        1: {...feedback[3], positive: newPositive, count: newCount}
+        ...feedback[3], positive: newPositive, count: newCount
       }
 
     } else {
@@ -119,18 +110,16 @@ export default function useFeedback (bait, curFeedback) {
       isPositive = false;
 
       feedback[3] = {
-        ...feedback,
-        1: {...feedback[3], positive: newPositive, count: newCount}
+        ...feedback[3], positive: newPositive, count: newCount
       }
     }
 
-    if (Math.random() <= feedback[3].reward[0]) {
+    if (feedback[3].reward[0] && Math.random() <= feedback[3].reward[0]) {
       const newReward = newFeedbackItem(feedback[3], 'reward', 0);
       hasReward = true;
 
       feedback[3] = {
-        ...feedback,
-        1: {...feedback[3], reward: newReward}
+        ...feedback[3], reward: newReward
       }
 
     } else {
@@ -138,20 +127,18 @@ export default function useFeedback (bait, curFeedback) {
       hasReward = false;
 
       feedback[3] = {
-        ...feedback,
-        1: {...feedback[3], reward: newReward}
+        ...feedback[3], reward: newReward
       }
     }
-  } else if (bait >=10 && bait < 13) {
+  } else if (bait >= 10 && bait < 13) {
 
-    if (Math.random() <= feedback[4].positive[0]) {
+    if (feedback[4].positive[0] > 0.09 && Math.random() <= feedback[4].positive[0]) {
       const newPositive = newFeedbackItem(feedback[4], 'positive', 0);
       const newCount = feedback[4].count - 1;
       isPositive = true;
 
       feedback[4] = {
-        ...feedback,
-        1: {...feedback[4], positive: newPositive, count: newCount}
+        ...feedback[4], positive: newPositive, count: newCount
       }
 
     } else {
@@ -160,18 +147,16 @@ export default function useFeedback (bait, curFeedback) {
       isPositive = false;
 
       feedback[4] = {
-        ...feedback,
-        1: {...feedback[4], positive: newPositive, count: newCount}
+        ...feedback[4], positive: newPositive, count: newCount
       }
     }
 
-    if (Math.random() <= feedback[4].reward[0]) {
+    if (feedback[4].reward[0] > 0.09 && Math.random() <= feedback[4].reward[0]) {
       const newReward = newFeedbackItem(feedback[4], 'reward', 0);
       hasReward = true;
 
       feedback[4] = {
-        ...feedback,
-        1: {...feedback[4], reward: newReward}
+        ...feedback[4], reward: newReward
       }
 
     } else {
@@ -179,17 +164,22 @@ export default function useFeedback (bait, curFeedback) {
       hasReward = false;
 
       feedback[4] = {
-        ...feedback,
-        1: {...feedback[4], reward: newReward}
+        ...feedback[4], reward: newReward
       }
     }
   }
-
-  return {isPositive, hasReward};
+  console.log(isPositive);
+  return {isPositive, hasReward, feedback};
 };
 
 const newFeedbackItem = (feedback, item, index) => {
-  const newItem= [...feedback[item][index], ...feedback[item][index] - 0.1];
+  if (index === 0 ) {
+    const newItem = [feedback[item][0] - 0.1, feedback[item][1] + 0.1];
 
-  return newItem;
+    return newItem;
+  } else {
+    const newItem = [feedback[item][0] + 0.1, feedback[item][1] - 0.1];
+
+    return newItem;
+  }
 }
