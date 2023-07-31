@@ -9,11 +9,11 @@ export default function FinishScreen(props) {
   return (
     <>
       <div className='finish-title'>
-        {props.isPositive && <span className='finish-title--text'>Sally Got A Fish!</span>}
-        {!props.isPositive && <span className='finish-title--text2'>Sally Got Nothing.</span>}
+        {props.hasReward && <span className='finish-title--text'>Sally Got A Fish!</span>}
+        {!props.hasReward && <span className='finish-title--text2'>Sally Got Nothing.</span>}
 
       </div>
-      {props.isPositive &&
+      {props.hasReward &&
         <section className='finish-screen'>
           <Confetti
             width={width}

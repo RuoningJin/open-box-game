@@ -25,12 +25,16 @@ export default function Game(props) {
   const [isPositive, setIsPositive] = useState();
   const [hasReward, setHasReward] = useState();
   
-  // const [feedback, setFeedback] = useState({
-  //   1: {positive: 0.8, reward: 0.8}, 
-  //   2: {positive: 0.2, reward: 0.2}, 
-  //   3: {positive: 0.8, reward: 0.2}, 
-  //   4: {positive: 0.2, reward: 0.8}
-  // });
+  const feedbackRef = useRef({
+    1: {positive: [8, 2], reward: [8, 2], count: 10}, 
+    2: {positive: [2, 8], reward: [2, 8], count: 10}, 
+    3: {positive: [8, 2], reward: [2, 8], count: 10}, 
+    4: {positive: [2, 8], reward: [8, 2], count: 10}
+  });
+
+  const updateFeedbackRef = (updatedFeedback) => {
+    feedbackRef.current = updatedFeedback;
+  }; 
 
   useEffect(() => {
     if (!chooseBait && !starter && !sessionBreak) {
@@ -94,7 +98,8 @@ export default function Game(props) {
             setChooseBait={setChooseBait}
             setIsPositive={setIsPositive}
             setHasReward={setHasReward}
-
+            feedbackRef={feedbackRef}
+            updateFeedbackRef={updateFeedbackRef}
           />
         }
 
