@@ -42,13 +42,13 @@ export default function BaitSelect(props) {
   const baitConfirmHandler = () => {
     if (props.bait) {
       props.setChooseBait(false);
-      console.log(props.userId);
       const {isPositive, hasReward, feedback} = updateFeedback(props.bait, props.feedbackRef);
       props.setIsPositive(isPositive);
       props.setHasReward(hasReward);
       props.updateFeedbackRef(feedback);
       return axios.post(`http://localhost:8001/api/users:${props.userId}`, {
         userId: props.userId, 
+        trialId: props.trialId,
         bait1: bait1, 
         bait2: bait2, 
         bait3: bait3, 

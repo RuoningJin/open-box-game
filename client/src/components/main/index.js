@@ -100,6 +100,7 @@ export default function Game(props) {
             setHasReward={setHasReward}
             feedbackRef={feedbackRef}
             updateFeedbackRef={updateFeedbackRef}
+            trialId={trialId}
           />
         }
 
