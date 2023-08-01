@@ -1,6 +1,0 @@
-"user_id","is_female","age","bait_1","bait_2","bait_3","bait_choice","is_positive","has_reward","trial_id","session"
-4,true,15,"ball3","car2","flower1","ball3",false,true,2,1
-4,true,15,"ball1","car3","flower2","car3",false,false,5,1
-4,true,15,"fruit3","flower1","car1","fruit3",false,true,4,1
-4,true,15,"flower1","ball2","car3","ball2",false,true,1,1
-4,true,15,"car2","flower3","fruit3","fruit3",true,false,3,1

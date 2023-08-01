@@ -68,7 +68,7 @@ module.exports = db => {
       const json2csvParser = new Parser();
       const csv = json2csvParser.parse(user_trial);
 
-      fs.writeFile('user3.csv', csv, (err) => {
+      fs.writeFile(`../trials/user${userId}.csv`, csv, (err) => {
         if (err) {
           console.error('Error writing CSV file:', err);
           response.status(500).json({ error: 'Failed to save CSV data' });
