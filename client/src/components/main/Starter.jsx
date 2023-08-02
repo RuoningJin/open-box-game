@@ -13,8 +13,10 @@ export default function Starter(props) {
   }, 2000);
 
   const startHandler = () => {
+    const newTrials = orderAllTrials(allTrials)
     props.setUserId(user.id);
-    props.setShuffledTrials(orderAllTrials(allTrials));
+    props.setShuffledTrials(newTrials);
+    props.setSession(newTrials[0].session);
     setStartButton(false);
     props.setStarter(false);
     props.setChooseBait(true);

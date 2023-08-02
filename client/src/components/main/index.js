@@ -19,7 +19,7 @@ export default function Game(props) {
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false);
   const [trialId, setTrialId] = useState(1);
-  const [session, setSession] = useState(1);
+  const [session, setSession] = useState();
   const [sessionBreak, setSessionBreak] = useState(false);
   const [shuffledTrials, setShuffledTrials] = useState();
   const [isPositive, setIsPositive] = useState();
@@ -83,7 +83,9 @@ export default function Game(props) {
           setUserId={setUserId}
           setChooseBait={setChooseBait} 
           fullScreenHandler={fullScreenHandler}
+          shuffledTrials={shuffledTrials}
           setShuffledTrials={setShuffledTrials}
+          setSession={setSession}
         />
       }
       <FullScreen handle={fullScreenHandler}>

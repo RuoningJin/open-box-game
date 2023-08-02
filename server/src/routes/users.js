@@ -45,6 +45,7 @@ module.exports = db => {
 
     db.query(`
       SELECT
+      user_trial.id,
       user_id,
       users.is_female,
       users.age,
