@@ -13,7 +13,7 @@ export default function BaitSelect(props) {
   const [bait2, setBait2] = useState('');
   const [bait3, setBait3] = useState('');
 
-  const {bait_1_category, bait_2_category, bait_3_category} = props.baitsPool;  
+  const {trial_id, bait_1_category, bait_2_category, bait_3_category} = props.baitsPool;  
 
   useEffect(() => {
     setBait1(randomNum(bait_1_category));
@@ -48,7 +48,7 @@ export default function BaitSelect(props) {
       props.updateFeedbackRef(feedback);
       return axios.post(`http://localhost:8001/api/users:${props.userId}`, {
         userId: props.userId, 
-        trialId: props.trialId,
+        trialId: trial_id,
         bait1: bait1, 
         bait2: bait2, 
         bait3: bait3, 

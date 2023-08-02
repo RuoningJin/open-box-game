@@ -10,6 +10,7 @@ import BaitSelect from './BaitSelect';
 import FinishScreen from './FinishScreen';
 import Starter from './Starter';
 import SessionBreak from './SessionBreak';
+import CompleteExperiment from './CompleteExperiment';
 
 export default function Game(props) {
   const [starter, setStarter] = useState(true);
@@ -21,9 +22,9 @@ export default function Game(props) {
   const [session, setSession] = useState(1);
   const [sessionBreak, setSessionBreak] = useState(false);
   const [shuffledTrials, setShuffledTrials] = useState();
-  const [currentTrial, setCurrentTrial] = useState();
   const [isPositive, setIsPositive] = useState();
   const [hasReward, setHasReward] = useState();
+  const [trialCompletion, setTrialCompletion] = useState(false);
   
   const feedbackRef = useRef({
     1: {positive: [8, 2], reward: [8, 2], count: 10}, 
@@ -38,6 +39,7 @@ export default function Game(props) {
 
   useEffect(() => {
     if (!chooseBait && !starter && !sessionBreak) {
+
       if (session === 1) {
         setTimeout(() => {
           setFinish(true);
@@ -63,7 +65,11 @@ export default function Game(props) {
           setBait('');
           setChooseBait(true);
         }, 8000);
-      }
+      } else if (!shuffledTrials[trialId + 1]) {
+        setTimeout(() => {
+          setTrialCompletion(true);
+        }, 8000);
+      };
     };
   }, [chooseBait]);
 
@@ -100,7 +106,6 @@ export default function Game(props) {
             setHasReward={setHasReward}
             feedbackRef={feedbackRef}
             updateFeedbackRef={updateFeedbackRef}
-            trialId={trialId}
           />
         }
 
@@ -120,6 +125,12 @@ export default function Game(props) {
             <OpponentScreen starter={starter}/>
             {!starter && <BaitScreen bait={bait}/>}
           </div>
+        }
+
+        {trialCompletion &&
+          <CompleteExperiment 
+            userId={userId}
+          />
         }
 
         <FishingBackground session={session}/>

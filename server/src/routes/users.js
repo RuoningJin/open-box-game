@@ -41,7 +41,7 @@ module.exports = db => {
   });
 
   router.get("/users/user_trial", (request, response) => {
-    const {userId} = request.body;
+    const userId = request.query.userId;
 
     db.query(`
       SELECT
