@@ -12,16 +12,11 @@ import Application from './components/Application';
 import Game from './components/main';
 import Consent from './components/Consent';
 import Users from './components/users';
-import Searching from './components/searching-quest'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Application />
-  },
-  {
-    path: "/quests",
-    element: <Searching />
   },
   {
     path: "/main",

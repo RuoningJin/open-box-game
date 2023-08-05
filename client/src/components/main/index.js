@@ -18,7 +18,7 @@ export default function Game(props) {
   const [chooseBait, setChooseBait] = useState(false);
   const [bait, setBait] = useState('');
   const [finish, setFinish] = useState(false);
-  const [trialId, setTrialId] = useState(1);
+  const [trialId, setTrialId] = useState(0);
   const [session, setSession] = useState();
   const [sessionBreak, setSessionBreak] = useState(false);
   const [shuffledTrials, setShuffledTrials] = useState();
@@ -108,6 +108,7 @@ export default function Game(props) {
             setHasReward={setHasReward}
             feedbackRef={feedbackRef}
             updateFeedbackRef={updateFeedbackRef}
+            outputTrialId={trialId}
           />
         }
 

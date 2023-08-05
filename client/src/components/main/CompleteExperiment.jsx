@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 export default function CompleteExperiment(props) {
 
 const onCompletion = () => {
-  console.log(props.userId);
   return axios.get(`http://localhost:8001/api/users/user_trial`, {
     params: {
       userId: props.userId

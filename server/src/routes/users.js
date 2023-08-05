@@ -26,12 +26,12 @@ module.exports = db => {
   });
 
   router.post("/users:id", (request, response) => {
-    const { userId, trialId, bait1, bait2, bait3, baitChoice, isPositive, hasReward} = request.body;
+    const { userId, trialId, bait1, bait2, bait3, baitChoice, isPositive, hasReward, trial} = request.body;
 
     db.query(`
-      INSERT INTO user_trial (user_id, trial_id, bait_1, bait_2, bait_3, bait_choice, is_positive, has_reward) VALUES ($1::integer, $2::integer, $3::integer, $4::integer, $5::integer, $6::integer, $7::boolean, $8::boolean)
+      INSERT INTO user_trial (user_id, trial_id, bait_1, bait_2, bait_3, bait_choice, is_positive, has_reward, trial) VALUES ($1::integer, $2::integer, $3::integer, $4::integer, $5::integer, $6::integer, $7::boolean, $8::boolean, $9::integer)
     `,
-      [userId, trialId, bait1, bait2, bait3, baitChoice, isPositive, hasReward]
+      [userId, trialId, bait1, bait2, bait3, baitChoice, isPositive, hasReward, trial]
     ).then(({ rows: users }) => {
       response.json(users);
     }).catch(err => {
@@ -42,10 +42,11 @@ module.exports = db => {
 
   router.get("/users/user_trial", (request, response) => {
     const userId = request.query.userId;
+    console.log(userId);
 
     db.query(`
       SELECT
-      user_trial.id,
+      trial,
       user_id,
       users.is_female,
       users.age,

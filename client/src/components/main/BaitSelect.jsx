@@ -48,6 +48,7 @@ export default function BaitSelect(props) {
       props.updateFeedbackRef(feedback);
       return axios.post(`http://localhost:8001/api/users:${props.userId}`, {
         userId: props.userId, 
+        trial: props.outputTrialId + 1,
         trialId: trial_id,
         bait1: bait1, 
         bait2: bait2, 

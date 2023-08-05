@@ -40,5 +40,6 @@ CREATE TABLE user_trial (
   bait_3 INTEGER REFERENCES baits(id) ON DELETE CASCADE,
   bait_choice INTEGER NOT NULL,
   is_positive BOOLEAN NOT NULL,
-  has_reward BOOLEAN NOT NULL
+  has_reward BOOLEAN NOT NULL,
+  trial INTEGER
 );
