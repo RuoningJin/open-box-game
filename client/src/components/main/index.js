@@ -25,6 +25,7 @@ export default function Game(props) {
   const [isPositive, setIsPositive] = useState();
   const [hasReward, setHasReward] = useState();
   const [trialCompletion, setTrialCompletion] = useState(false);
+  const startTimeRef = useRef(null);
   
   const feedbackRef = useRef({
     1: {positive: [8, 2], reward: [8, 2], count: 10}, 
@@ -86,6 +87,7 @@ export default function Game(props) {
           shuffledTrials={shuffledTrials}
           setShuffledTrials={setShuffledTrials}
           setSession={setSession}
+          startTimeRef={startTimeRef}
         />
       }
       <FullScreen handle={fullScreenHandler}>
@@ -133,6 +135,7 @@ export default function Game(props) {
         {trialCompletion &&
           <CompleteExperiment 
             userId={userId}
+            startTimeRef={startTimeRef}
           />
         }
 

@@ -41,7 +41,7 @@ module.exports = db => {
   });
 
   router.get("/users/user_trial", (request, response) => {
-    const userId = request.query.userId;
+    const {userId, totalTimeUsed} = request.query;
     console.log(userId);
 
     db.query(`
@@ -69,8 +69,10 @@ module.exports = db => {
     `).then(({ rows: user_trial }) => {
       const json2csvParser = new Parser();
       const csv = json2csvParser.parse(user_trial);
+      const newCsv = `Time Used: ${totalTimeUsed}min` + '\n' + csv;
 
-      fs.writeFile(`../trials/user${userId}.csv`, csv, (err) => {
+      fs.writeFile(`../trials/user${userId}.csv`, newCsv, (err) => {
+
         if (err) {
           console.error('Error writing CSV file:', err);
           response.status(500).json({ error: 'Failed to save CSV data' });
@@ -79,7 +81,7 @@ module.exports = db => {
           // Send the CSV data as the response
           response.header('Content-Type', 'text/csv');
           response.attachment('user_trial_data.csv');
-          response.send(csv);
+          response.send(newCsv);
         }
       });
     });
