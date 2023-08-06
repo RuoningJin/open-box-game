@@ -28,7 +28,7 @@
     left: 15vw;
     width: 100%;
     background-size: 45vw;
-    height: 60vh;
+    height: 83vh;
     background-image: url('../../../public/boat2.png');
     background-repeat: no-repeat;
     animation-name: boatAnimation, boatEntry;
@@ -51,36 +51,15 @@
     background-image: url('../../../public/trees1.png');
   }
 
-  // .fish {
-  //   position: absolute;
-  //   z-index: 9999;
-  //   bottom: 0;
-  //   width: 100%;
-  //   height: 300px;
-  //   background-size: 1000px;
-  // }
-  // .fish1 {
-  //   animation: animate2 30s linear infinite;
-  //   background-image: url('../../../public/underwater-fish/leftS.png');
-  // }
-  // .fish2 {
-  //   animation: animate2 15s linear infinite;
-  //   background-image: url('../../../public/underwater-fish/leftF.png');
-  // }
-  // .fish3 {
-  //   animation: animate 15s linear infinite;
-  //   background-image: url('../../../public/underwater-fish/rightS.png');
-  // }
-  // .fish4 {
-  //   animation: animate 40s linear infinite;
-  //   background-image: url('../../../public/underwater-fish/rightSS.png');
-  //   bottom: 110px;
-  // }
-  // .fish5 {
-  //   animation: animate 15s linear infinite;
-  //   background-image: url('../../../public/underwater-fish/rightF.png');
-  //   bottom: 110px;
-  // }
+  .trees2 {
+    position: absolute;;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-size: 200vh;
+    animation: cloudAnimation 400s linear infinite;
+    background-image: url('../../../public/trees2.png');
+  }
 
   .wave-bottom {
     z-index: 1000;

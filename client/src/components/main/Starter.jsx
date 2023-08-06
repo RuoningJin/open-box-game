@@ -6,7 +6,7 @@ import {orderAllTrials} from "../../helpers/trialHelper";
 export default function Starter(props) {
   const [startButton, setStartButton] = useState(false);
   
-  const {user} = useApplicationData(); //{user, allTrials}
+  const {user, allTrials} = useApplicationData();
 
   //testing data need to be changed to the above ones
   const newTrials = [
@@ -19,7 +19,7 @@ export default function Starter(props) {
   }, 2000);
 
   const startHandler = () => {
-    // const newTrials = orderAllTrials(allTrials) need to be added back
+    // const newTrials = orderAllTrials(allTrials);
     props.setUserId(user.id);
     props.setShuffledTrials(newTrials);
     props.setSession(newTrials[0].session);

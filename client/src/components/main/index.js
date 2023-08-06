@@ -99,7 +99,7 @@ export default function Game(props) {
             setTrialId={setTrialId}
           />
         }
-        {chooseBait && 
+        {/* {chooseBait && 
           <BaitSelect 
             userId={userId}
             bait={bait} 
@@ -112,7 +112,7 @@ export default function Game(props) {
             updateFeedbackRef={updateFeedbackRef}
             outputTrialId={trialId}
           />
-        }
+        } */}
 
         {finish && 
           <FinishScreen 
